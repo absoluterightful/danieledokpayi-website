@@ -165,6 +165,37 @@
 
     .listen-inner { max-width: 950px; margin: 0 auto; }
     .spotify-frame { margin: 30px auto 0; max-width: 760px; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,.32); }
+    .platform-embeds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.player-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 20px;
+}
+
+.player-card h3 {
+    margin-bottom: 16px;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.player-card iframe {
+    width: 100%;
+    border: none;
+}
+
+@media (max-width: 850px) {
+    .platform-embeds {
+        grid-template-columns: 1fr;
+    }
+}
 
     .music-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
     .music-links a { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.045); border: 1px solid var(--line); text-decoration: none; font-weight: 900; }
@@ -261,14 +292,41 @@
       <div class="section-title">Listen</div>
       <h2>Stream the Music</h2>
       <p class="muted">Follow Daniel Edokpayi on your favorite platform and listen to the latest releases.</p>
-      <div class="spotify-frame">
-        <iframe style="border-radius:14px" src="https://open.spotify.com/embed/artist/6I2SX28seSDw9YgGkgTPOR?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-      <div class="music-links">
-        <a href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener" onclick="trackClick('Spotify - Listen Section')">Spotify</a>
-        <a href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener" onclick="trackClick('Apple Music - Listen Section')">Apple Music</a>
-        <a href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener" onclick="trackClick('YouTube - Listen Section')">YouTube</a>
-      </div>
+     <div class="platform-embeds">
+
+  <div class="player-card">
+    <h3>Spotify</h3>
+    <iframe
+      style="border-radius:18px"
+      src="https://open.spotify.com/embed/artist/6I2SX28seSDw9YgGkgTPOR?utm_source=generator&theme=0"
+      width="100%"
+      height="500"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="player-card">
+    <h3>Apple Music</h3>
+    <iframe
+      allow="autoplay *; encrypted-media *;"
+      frameborder="0"
+      height="500"
+      style="width:100%;border-radius:18px;overflow:hidden;background:transparent;"
+      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+      src="https://embed.music.apple.com/us/artist/daniel-edokpayi/1732902527">
+    </iframe>
+  </div>
+
+</div>
+
+<div class="music-links">
+  <a href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank">Open Spotify</a>
+  <a href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank">Open Apple Music</a>
+  <a href="https://www.youtube.com/@danedokpayi" target="_blank">YouTube</a>
+</div>
     </div>
   </section>
 
