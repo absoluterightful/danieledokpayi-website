@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16511764603"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16511764603"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16511764603');
 
-  gtag('config', 'AW-16511764603');
-</script>
-  
+    function trackClick(label) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'music_link_click', {
+          event_category: 'Music Links',
+          event_label: label
+        });
+      }
+    }
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Official website for Daniel Edokpayi, an Afrogospel, Afro R&B, and AfroSoul artist. Stream the Still Here EP." />
@@ -71,11 +79,7 @@
       letter-spacing: .12em;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      opacity: .82;
-    }
-
+    .nav-links a { text-decoration: none; opacity: .82; }
     .nav-links a:hover { color: var(--gold); opacity: 1; }
 
     .hero {
@@ -120,23 +124,9 @@
       margin: 0;
     }
 
-    .subtitle {
-      font-size: clamp(19px, 2.4vw, 29px);
-      margin: 24px 0 16px;
-    }
-
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 640px;
-      margin-bottom: 32px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+    .subtitle { font-size: clamp(19px, 2.4vw, 29px); margin: 24px 0 16px; }
+    .hero-text { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 32px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 14px; }
 
     .btn {
       display: inline-flex;
@@ -151,87 +141,22 @@
     }
 
     .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--burnt), var(--deep));
-      color: #fff;
-      box-shadow: 0 18px 40px rgba(217,108,59,.24);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(247,230,207,.32);
-      background: rgba(255,255,255,.035);
-    }
+    .btn-primary { background: linear-gradient(135deg, var(--burnt), var(--deep)); color: #fff; box-shadow: 0 18px 40px rgba(217,108,59,.24); }
+    .btn-outline { border: 1px solid rgba(247,230,207,.32); background: rgba(255,255,255,.035); }
 
     section { padding: 90px 7vw; }
-
-    .section-title {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1;
-      letter-spacing: -.05em;
-      margin: 0 0 24px;
-    }
-
+    .section-title { color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: 14px; font-weight: 900; margin-bottom: 12px; }
+    h2 { font-size: clamp(34px, 5vw, 64px); line-height: 1; letter-spacing: -.05em; margin: 0 0 24px; }
     .muted { color: var(--muted); }
 
-    .release {
-      background: linear-gradient(180deg, var(--brown), var(--dark));
-    }
+    .release { background: linear-gradient(180deg, var(--brown), var(--dark)); }
+    .release-grid, .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 54px; max-width: 1180px; margin: 0 auto; align-items: center; }
+    .cover, .portrait { width: 100%; border-radius: 26px; border: 1px solid var(--line); box-shadow: 0 28px 80px rgba(0,0,0,.45); display: block; }
+    .card { background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 26px; padding: 30px; }
 
-    .release-grid, .about-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 54px;
-      max-width: 1180px;
-      margin: 0 auto;
-      align-items: center;
-    }
-
-    .cover, .portrait {
-      width: 100%;
-      border-radius: 26px;
-      border: 1px solid var(--line);
-      box-shadow: 0 28px 80px rgba(0,0,0,.45);
-      display: block;
-    }
-
-    .card {
-      background: rgba(255,255,255,.035);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 30px;
-    }
-
-    .tracklist {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .tracklist li {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tracklist span {
-      color: var(--gold);
-      font-weight: 900;
-      margin-right: 12px;
-    }
+    .tracklist { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+    .tracklist li { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .tracklist span { color: var(--gold); font-weight: 900; margin-right: 12px; }
 
     .listen {
       background: radial-gradient(circle at 70% 20%, rgba(217,108,59,.18), transparent 36%), var(--soft);
@@ -239,59 +164,18 @@
     }
 
     .listen-inner { max-width: 950px; margin: 0 auto; }
+    .spotify-frame { margin: 30px auto 0; max-width: 760px; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,.32); }
 
-    .music-links {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .music-links a {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.045);
-      border: 1px solid var(--line);
-      text-decoration: none;
-      font-weight: 900;
-    }
-
-    .music-links a:hover {
-      color: var(--gold);
-      border-color: rgba(229,170,103,.8);
-    }
+    .music-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
+    .music-links a { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.045); border: 1px solid var(--line); text-decoration: none; font-weight: 900; }
+    .music-links a:hover { color: var(--gold); border-color: rgba(229,170,103,.8); }
 
     .connect { text-align: center; }
+    .socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .socials a { text-decoration: none; border: 1px solid var(--line); padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,.035); }
+    .socials a:hover { background: var(--burnt); border-color: var(--burnt); color: white; }
 
-    .socials {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .socials a {
-      text-decoration: none;
-      border: 1px solid var(--line);
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.035);
-    }
-
-    .socials a:hover {
-      background: var(--burnt);
-      border-color: var(--burnt);
-      color: white;
-    }
-
-    footer {
-      padding: 28px 7vw;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      background: #0b0503;
-    }
+    footer { padding: 28px 7vw; text-align: center; color: var(--muted); border-top: 1px solid var(--line); background: #0b0503; }
 
     @media (max-width: 850px) {
       .nav { padding: 15px 20px; }
@@ -328,9 +212,9 @@
       <p class="subtitle">Afrogospel • Afro R&amp;B • AfroSoul</p>
       <p class="hero-text">Music rooted in faith, hope, honesty, and the reminder that God is still here through every season.</p>
       <div class="buttons">
-        <a class="btn btn-primary" href="https://danieledokpayi.ampl.ink/3QVl3" target="_blank" rel="noopener">Stream Still Here</a>
-        <a class="btn btn-outline" href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener">Spotify</a>
-        <a class="btn btn-outline" href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn btn-primary" href="https://danieledokpayi.ampl.ink/3QVl3" target="_blank" rel="noopener" onclick="trackClick('Stream Still Here - Hero')">Stream Still Here</a>
+        <a class="btn btn-outline" href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener" onclick="trackClick('Spotify - Hero')">Spotify</a>
+        <a class="btn btn-outline" href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener" onclick="trackClick('YouTube - Hero')">YouTube</a>
       </div>
     </div>
   </header>
@@ -351,8 +235,8 @@
           <li><div><span>04</span>On My Mind Jesus</div><small>Afro Gospel</small></li>
         </ol>
         <div class="buttons" style="margin-top:28px;">
-          <a class="btn btn-primary" href="https://danieledokpayi.ampl.ink/3QVl3" target="_blank" rel="noopener">Listen Now</a>
-          <a class="btn btn-outline" href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener">Apple Music</a>
+          <a class="btn btn-primary" href="https://danieledokpayi.ampl.ink/3QVl3" target="_blank" rel="noopener" onclick="trackClick('Listen Now - Latest Release')">Listen Now</a>
+          <a class="btn btn-outline" href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener" onclick="trackClick('Apple Music - Latest Release')">Apple Music</a>
         </div>
       </div>
     </div>
@@ -377,10 +261,13 @@
       <div class="section-title">Listen</div>
       <h2>Stream the Music</h2>
       <p class="muted">Follow Daniel Edokpayi on your favorite platform and listen to the latest releases.</p>
+      <div class="spotify-frame">
+        <iframe style="border-radius:14px" src="https://open.spotify.com/embed/artist/6I2SX28seSDw9YgGkgTPOR?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
       <div class="music-links">
-        <a href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener">Apple Music</a>
-        <a href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener" onclick="trackClick('Spotify - Listen Section')">Spotify</a>
+        <a href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener" onclick="trackClick('Apple Music - Listen Section')">Apple Music</a>
+        <a href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener" onclick="trackClick('YouTube - Listen Section')">YouTube</a>
       </div>
     </div>
   </section>
@@ -390,11 +277,11 @@
     <h2>Stay Connected</h2>
     <p class="muted">Follow the journey, share the music, and keep up with new releases.</p>
     <div class="socials">
-      <a href="https://www.instagram.com/tiprdaniel" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.tiktok.com/@dnkpayi" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://x.com/danedokpayi" target="_blank" rel="noopener">X / Twitter</a>
-      <a href="https://www.facebook.com/profile.php?id=61555983368394" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/tiprdaniel" target="_blank" rel="noopener" onclick="trackClick('Instagram')">Instagram</a>
+      <a href="https://www.tiktok.com/@dnkpayi" target="_blank" rel="noopener" onclick="trackClick('TikTok')">TikTok</a>
+      <a href="https://x.com/danedokpayi" target="_blank" rel="noopener" onclick="trackClick('X / Twitter')">X / Twitter</a>
+      <a href="https://www.facebook.com/profile.php?id=61555983368394" target="_blank" rel="noopener" onclick="trackClick('Facebook')">Facebook</a>
+      <a href="https://www.youtube.com/@danedokpayi" target="_blank" rel="noopener" onclick="trackClick('YouTube - Social')">YouTube</a>
     </div>
   </section>
 
