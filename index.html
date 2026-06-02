@@ -7,15 +7,15 @@
   <title>Daniel Edokpayi | Official Website</title>
   <style>
     :root {
-      --dark: #120b07;
-      --brown: #24140e;
-      --brown-soft: #321c13;
+      --dark: #100805;
+      --brown: #21120c;
+      --soft: #321b11;
       --burnt: #d96c3b;
-      --burnt-deep: #a9431f;
-      --gold: #e0a15c;
-      --cream: #f7e7d1;
-      --muted: #c6aa91;
-      --line: rgba(247, 231, 209, 0.14);
+      --deep: #9e3f1d;
+      --gold: #e5aa67;
+      --cream: #f7e6cf;
+      --muted: #c8aa90;
+      --line: rgba(247, 230, 207, 0.14);
     }
 
     * { box-sizing: border-box; }
@@ -29,96 +29,105 @@
     }
 
     a { color: inherit; }
+
     .nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 20;
+      z-index: 30;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 18px 7vw;
-      background: rgba(18, 11, 7, 0.76);
+      background: rgba(16, 8, 5, 0.78);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
+
     .logo {
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
       color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
       font-size: 13px;
     }
+
     .nav-links {
       display: flex;
       gap: 22px;
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
     }
+
     .nav-links a {
       text-decoration: none;
-      color: var(--cream);
-      opacity: 0.82;
+      opacity: .82;
     }
+
     .nav-links a:hover { color: var(--gold); opacity: 1; }
 
     .hero {
       min-height: 100vh;
       display: grid;
       align-items: center;
-      padding: 120px 7vw 70px;
+      padding: 120px 7vw 80px;
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(18,11,7,0.98) 0%, rgba(18,11,7,0.82) 42%, rgba(18,11,7,0.42) 100%),
-        url('data:image/webp;base64,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') center right / cover no-repeat;
+        linear-gradient(90deg, rgba(16,8,5,.98) 0%, rgba(16,8,5,.82) 45%, rgba(16,8,5,.28) 100%),
+        url('danibobo.webp') center right / cover no-repeat;
     }
+
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(217,108,59,0.25), transparent 34%),
-                  linear-gradient(0deg, rgba(18,11,7,1), transparent 22%);
+      background: radial-gradient(circle at 18% 50%, rgba(217,108,59,.25), transparent 35%), linear-gradient(0deg, var(--dark), transparent 25%);
       pointer-events: none;
     }
+
     .hero-content {
       max-width: 760px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
+
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.26em;
+      letter-spacing: .25em;
       font-size: 13px;
+      font-weight: 800;
       margin-bottom: 18px;
-      font-weight: 700;
     }
+
     h1 {
-      font-size: clamp(48px, 9vw, 118px);
-      line-height: 0.94;
+      font-size: clamp(52px, 9vw, 118px);
+      line-height: .94;
+      letter-spacing: -.06em;
       margin: 0;
-      letter-spacing: -0.06em;
     }
+
     .subtitle {
       font-size: clamp(19px, 2.4vw, 29px);
       margin: 24px 0 16px;
-      color: var(--cream);
     }
+
     .hero-text {
-      max-width: 640px;
       color: var(--muted);
       font-size: 18px;
+      max-width: 640px;
       margin-bottom: 32px;
     }
+
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      align-items: center;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -126,61 +135,72 @@
       padding: 14px 22px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+      font-weight: 900;
+      letter-spacing: .04em;
+      transition: .2s ease;
     }
+
     .btn:hover { transform: translateY(-2px); }
+
     .btn-primary {
-      background: linear-gradient(135deg, var(--burnt), var(--burnt-deep));
-      color: white;
-      box-shadow: 0 18px 40px rgba(217,108,59,0.22);
+      background: linear-gradient(135deg, var(--burnt), var(--deep));
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(217,108,59,.24);
     }
+
     .btn-outline {
-      border: 1px solid rgba(247,231,209,0.32);
-      color: var(--cream);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(247,230,207,.32);
+      background: rgba(255,255,255,.035);
     }
 
     section { padding: 90px 7vw; }
+
     .section-title {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: .16em;
       font-size: 14px;
+      font-weight: 900;
       margin-bottom: 12px;
-      font-weight: 800;
     }
+
     h2 {
       font-size: clamp(34px, 5vw, 64px);
       line-height: 1;
+      letter-spacing: -.05em;
       margin: 0 0 24px;
-      letter-spacing: -0.05em;
     }
+
+    .muted { color: var(--muted); }
+
     .release {
       background: linear-gradient(180deg, var(--brown), var(--dark));
     }
+
     .release-grid, .about-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: .95fr 1.05fr;
       gap: 54px;
-      align-items: center;
       max-width: 1180px;
       margin: 0 auto;
+      align-items: center;
     }
-    .cover {
+
+    .cover, .portrait {
       width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 26px 80px rgba(0,0,0,0.45);
+      border-radius: 26px;
       border: 1px solid var(--line);
+      box-shadow: 0 28px 80px rgba(0,0,0,.45);
+      display: block;
     }
+
     .card {
-      background: rgba(255,255,255,0.035);
+      background: rgba(255,255,255,.035);
       border: 1px solid var(--line);
       border-radius: 26px;
       padding: 30px;
     }
-    .muted { color: var(--muted); }
+
     .tracklist {
       list-style: none;
       padding: 0;
@@ -188,63 +208,51 @@
       display: grid;
       gap: 12px;
     }
+
     .tracklist li {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       padding: 14px 0;
       border-bottom: 1px solid var(--line);
-      color: var(--cream);
     }
+
     .tracklist span {
       color: var(--gold);
-      font-weight: 800;
+      font-weight: 900;
       margin-right: 12px;
     }
 
-    .about {
-      background: var(--dark);
-    }
-    .portrait {
-      width: 100%;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.36);
-    }
-
     .listen {
-      background:
-        radial-gradient(circle at 70% 20%, rgba(217,108,59,0.18), transparent 36%),
-        var(--brown-soft);
+      background: radial-gradient(circle at 70% 20%, rgba(217,108,59,.18), transparent 36%), var(--soft);
       text-align: center;
     }
-    .listen-inner {
-      max-width: 950px;
-      margin: 0 auto;
-    }
+
+    .listen-inner { max-width: 950px; margin: 0 auto; }
+
     .music-links {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
       margin-top: 30px;
     }
+
     .music-links a {
       padding: 18px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.045);
+      background: rgba(255,255,255,.045);
       border: 1px solid var(--line);
       text-decoration: none;
-      font-weight: 800;
-    }
-    .music-links a:hover {
-      border-color: rgba(224,161,92,0.8);
-      color: var(--gold);
+      font-weight: 900;
     }
 
-    .connect {
-      text-align: center;
-      background: var(--dark);
+    .music-links a:hover {
+      color: var(--gold);
+      border-color: rgba(229,170,103,.8);
     }
+
+    .connect { text-align: center; }
+
     .socials {
       display: flex;
       justify-content: center;
@@ -252,14 +260,15 @@
       gap: 12px;
       margin-top: 25px;
     }
+
     .socials a {
       text-decoration: none;
       border: 1px solid var(--line);
       padding: 12px 16px;
       border-radius: 999px;
-      color: var(--cream);
-      background: rgba(255,255,255,0.035);
+      background: rgba(255,255,255,.035);
     }
+
     .socials a:hover {
       background: var(--burnt);
       border-color: var(--burnt);
@@ -268,39 +277,26 @@
 
     footer {
       padding: 28px 7vw;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
       text-align: center;
-      background: #0b0705;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0b0503;
     }
 
     @media (max-width: 850px) {
-      .nav {
-        padding: 16px 20px;
-      }
-      .nav-links {
-        gap: 12px;
-        font-size: 11px;
-      }
+      .nav { padding: 15px 20px; }
+      .nav-links { gap: 12px; font-size: 11px; }
       .hero {
         min-height: 92vh;
         padding: 110px 22px 60px;
         background:
-          linear-gradient(180deg, rgba(18,11,7,0.78), rgba(18,11,7,0.98)),
-          url('data:image/webp;base64,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') center top / cover no-repeat;
+          linear-gradient(180deg, rgba(16,8,5,.68), rgba(16,8,5,.98)),
+          url('danibobo.webp') center top / cover no-repeat;
       }
       section { padding: 70px 22px; }
-      .release-grid, .about-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .music-links {
-        grid-template-columns: 1fr;
-      }
-      .tracklist li {
-        flex-direction: column;
-        gap: 4px;
-      }
+      .release-grid, .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .music-links { grid-template-columns: 1fr; }
+      .tracklist li { flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
@@ -320,9 +316,7 @@
       <div class="eyebrow">Official Artist Website</div>
       <h1>Daniel<br>Edokpayi</h1>
       <p class="subtitle">Afrogospel • Afro R&amp;B • AfroSoul</p>
-      <p class="hero-text">
-        Music rooted in faith, hope, honesty, and the reminder that God is still here through every season.
-      </p>
+      <p class="hero-text">Music rooted in faith, hope, honesty, and the reminder that God is still here through every season.</p>
       <div class="buttons">
         <a class="btn btn-primary" href="https://danieledokpayi.ampl.ink/3QVl3" target="_blank" rel="noopener">Stream Still Here</a>
         <a class="btn btn-outline" href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener">Spotify</a>
@@ -334,15 +328,12 @@
   <section class="release" id="release">
     <div class="release-grid">
       <div>
-        <img class="cover" src="data:image/webp;base64,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 " alt="Still Here EP cover art by Daniel Edokpayi" />
+        <img class="cover" src="still%20here%20cover%20(1).jpg" alt="Still Here EP cover art by Daniel Edokpayi" />
       </div>
       <div class="card">
         <div class="section-title">Latest Release</div>
         <h2>Still Here EP</h2>
-        <p class="muted">
-          <em>Still Here</em> blends Afrogospel, Afro R&amp;B, and AfroSoul into a warm, honest project about faith,
-          gratitude, healing, and God's presence in difficult seasons.
-        </p>
+        <p class="muted"><em>Still Here</em> blends Afrogospel, Afro R&amp;B, and AfroSoul into a warm, honest project about faith, gratitude, healing, and God's presence in difficult seasons.</p>
         <ol class="tracklist">
           <li><div><span>01</span>You Stay</div><small>Afro Soul / Gospel</small></li>
           <li><div><span>02</span>Never Leave Me</div><small>Afro R&amp;B / Gospel</small></li>
@@ -362,18 +353,11 @@
       <div class="card">
         <div class="section-title">About</div>
         <h2>Faith. Sound. Story.</h2>
-        <p class="muted">
-          Daniel Edokpayi is a Nigerian-born independent artist creating music shaped by faith, African sound,
-          and real life. His songs carry messages of hope for people walking through loneliness, guilt,
-          uncertainty, and difficult seasons.
-        </p>
-        <p class="muted">
-          Through Afrogospel, Afro R&amp;B, and AfroSoul, Daniel’s mission is simple: to make honest music that
-          reminds people that God has not left them.
-        </p>
+        <p class="muted">Daniel Edokpayi is a Nigerian-born independent artist creating music shaped by faith, African sound, and real life. His songs carry messages of hope for people walking through loneliness, guilt, uncertainty, and difficult seasons.</p>
+        <p class="muted">Through Afrogospel, Afro R&amp;B, and AfroSoul, Daniel’s mission is simple: to make honest music that reminds people that God has not left them.</p>
       </div>
       <div>
-        <img class="portrait" src="data:image/webp;base64,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" alt="Black and white portrait of Daniel Edokpayi" />
+        <img class="portrait" src="danibobo.webp" alt="Black and white portrait of Daniel Edokpayi" />
       </div>
     </div>
   </section>
@@ -382,9 +366,7 @@
     <div class="listen-inner">
       <div class="section-title">Listen</div>
       <h2>Stream the Music</h2>
-      <p class="muted">
-        Follow Daniel Edokpayi on your favorite platform and listen to the latest releases.
-      </p>
+      <p class="muted">Follow Daniel Edokpayi on your favorite platform and listen to the latest releases.</p>
       <div class="music-links">
         <a href="https://open.spotify.com/artist/6I2SX28seSDw9YgGkgTPOR" target="_blank" rel="noopener">Spotify</a>
         <a href="https://music.apple.com/us/artist/daniel-edokpayi/1732902527" target="_blank" rel="noopener">Apple Music</a>
@@ -406,8 +388,6 @@
     </div>
   </section>
 
-  <footer>
-    © 2026 Daniel Edokpayi. All rights reserved.
-  </footer>
+  <footer>© 2026 Daniel Edokpayi. All rights reserved.</footer>
 </body>
 </html>
