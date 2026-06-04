@@ -1,0 +1,243 @@
+:root{
+  --dark:#07130d;
+  --brown:#102018;
+  --soft:#173024;
+  --burnt:#c21f32;
+  --deep:#7f1420;
+  --gold:#f5c96b;
+  --cream:#fff7e8;
+  --muted:#d7c8b5;
+  --line:rgba(255,247,232,.18);
+  --pine:#1f7a46;
+}
+
+body{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(245,201,107,.16),transparent 28%),
+    radial-gradient(circle at 88% 8%,rgba(194,31,50,.18),transparent 26%),
+    linear-gradient(180deg,#07130d,#0d1711 42%,#07130d);
+}
+
+body:before,
+body:after{
+  content:"";
+  position:fixed;
+  inset:-120px 0 0;
+  z-index:24;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.95) 0 2px,transparent 2.5px),
+    radial-gradient(circle,rgba(255,247,232,.78) 0 1.5px,transparent 2px),
+    radial-gradient(circle,rgba(245,201,107,.72) 0 1px,transparent 1.5px);
+  background-size:120px 120px,170px 170px,230px 230px;
+  background-position:0 0,46px 72px,100px 24px;
+  animation:snowfall 16s linear infinite;
+  opacity:.72;
+}
+
+body:after{
+  background-size:180px 180px,260px 260px,320px 320px;
+  background-position:80px 30px,140px 120px,20px 160px;
+  animation-duration:25s;
+  opacity:.42;
+}
+
+@keyframes snowfall{
+  from{transform:translate3d(0,-120px,0)}
+  to{transform:translate3d(0,120px,0)}
+}
+
+.nav{
+  background:rgba(7,19,13,.86);
+  border-bottom:1px solid rgba(245,201,107,.24);
+  box-shadow:0 14px 38px rgba(0,0,0,.25);
+}
+
+.nav:after{
+  content:"";
+  position:absolute;
+  left:7vw;
+  right:7vw;
+  bottom:-7px;
+  height:12px;
+  pointer-events:none;
+  background:
+    radial-gradient(circle,#f8d978 0 2px,transparent 3px) 0 50%/52px 12px repeat-x,
+    radial-gradient(circle,#e63a46 0 2px,transparent 3px) 17px 50%/52px 12px repeat-x,
+    radial-gradient(circle,#38b56b 0 2px,transparent 3px) 34px 50%/52px 12px repeat-x;
+  filter:drop-shadow(0 0 6px rgba(245,201,107,.5));
+  opacity:.95;
+}
+
+.logo{
+  color:var(--gold);
+  text-shadow:0 0 20px rgba(245,201,107,.22);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#c21f32,#1f7a46);
+  box-shadow:0 18px 42px rgba(194,31,50,.28);
+}
+
+.btn-outline,.card,.player-card,.socials a,.music-links a{
+  border-color:rgba(245,201,107,.24);
+}
+
+.hero .buttons a[data-icon],
+.music-links a,
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.hero .buttons a[data-icon]:before,
+.music-links a[data-icon]:before,
+.socials a[data-icon]:before{
+  content:none;
+}
+
+.brand-icon{
+  display:inline-grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  border-radius:999px;
+  padding:6px;
+  background:rgba(255,247,232,.12);
+  border:1px solid rgba(245,201,107,.32);
+  object-fit:contain;
+  box-shadow:inset 0 0 18px rgba(255,247,232,.05);
+}
+
+.holiday-note{
+  max-width:520px;
+  margin:-6px 0 22px;
+  color:#ffe6b2;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-shadow:0 0 20px rgba(245,201,107,.2);
+}
+
+html.christmas-active .christmas-badge{
+  display:inline-flex;
+}
+
+html.christmas-active .holiday-note{
+  display:block;
+}
+
+.music-links a{
+  min-height:70px;
+}
+
+.socials a{
+  padding:10px 15px 10px 10px;
+}
+
+.hero{
+  background:
+    linear-gradient(90deg,rgba(7,19,13,.98),rgba(7,19,13,.82),rgba(7,19,13,.3)),
+    url('danibobo.webp') center right/cover no-repeat;
+}
+
+.hero:after{
+  background:
+    radial-gradient(circle at 18% 46%,rgba(194,31,50,.3),transparent 34%),
+    radial-gradient(circle at 62% 16%,rgba(31,122,70,.22),transparent 28%),
+    linear-gradient(0deg,var(--dark),transparent 25%);
+}
+
+.christmas-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 20px;
+  padding:10px 14px;
+  border:1px solid rgba(245,201,107,.42);
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(194,31,50,.28),rgba(31,122,70,.28));
+  color:var(--cream);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  box-shadow:0 16px 40px rgba(0,0,0,.28),inset 0 0 24px rgba(255,247,232,.05);
+}
+
+.christmas-badge:before,
+.christmas-badge:after{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(245,201,107,.7);
+  flex:0 0 auto;
+}
+
+.section-title,.eyebrow,.tracklist span,.player-card h3{
+  color:var(--gold);
+}
+
+.release,.featured,.wrap,.page-hero{
+  background:
+    radial-gradient(circle at 74% 16%,rgba(194,31,50,.16),transparent 34%),
+    radial-gradient(circle at 18% 78%,rgba(31,122,70,.18),transparent 30%),
+    linear-gradient(180deg,var(--brown),var(--dark));
+}
+
+.listen{
+  background:
+    radial-gradient(circle at 70% 20%,rgba(194,31,50,.18),transparent 34%),
+    radial-gradient(circle at 24% 70%,rgba(31,122,70,.2),transparent 32%),
+    var(--soft);
+}
+
+footer{
+  background:#050d09;
+  border-top:1px solid rgba(245,201,107,.2);
+}
+
+@media(max-width:850px){
+  .nav:after{
+    left:20px;
+    right:20px;
+  }
+
+  .hero{
+    background:
+      linear-gradient(180deg,rgba(7,19,13,.62),rgba(7,19,13,.98)),
+      url('danibobo.webp') center top/cover no-repeat;
+  }
+
+  .christmas-badge{
+    white-space:normal;
+    line-height:1.35;
+  }
+
+  .holiday-note{
+    font-size:14px;
+  }
+
+  body:before,
+  body:after{
+    opacity:.35;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  body:before,
+  body:after{
+    animation:snowfall 22s linear infinite!important;
+  }
+
+  body:after{
+    animation-duration:32s!important;
+  }
+}
