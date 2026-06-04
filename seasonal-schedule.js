@@ -1,4 +1,14 @@
 (function(){
+  function cleanNavigation(){
+    var links = document.querySelectorAll('.nav-links a');
+    links.forEach(function(link){
+      var href = link.getAttribute('href') || '';
+      if(href === '#listen' || href === '#connect' || href === 'index.html#listen' || href === 'index.html#connect'){
+        link.remove();
+      }
+    });
+  }
+
   function loadFeaturedRotation(){
     if(document.querySelector('script[data-featured-rotation]')){
       return;
@@ -10,6 +20,7 @@
     document.head.appendChild(script);
   }
 
+  cleanNavigation();
   loadFeaturedRotation();
 
   var start = Date.parse('2026-12-25T00:00:00-06:00');
