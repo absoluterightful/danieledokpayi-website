@@ -2,7 +2,7 @@ var featuredSongs=[
   {
     title:"You Stay",
     meta:"Track 01 \u2022 Still Here EP",
-    href:"you-stay.html",
+    href:"/you-stay",
     spotify:"5saMfAAxYSPvXBq39zpa5p",
     desc:"An honest song about weakness, grace, and the reminder that even when we run, God still stays.",
     note:"Featured for this 3-week spotlight cycle from the Still Here EP."
@@ -10,7 +10,7 @@ var featuredSongs=[
   {
     title:"Never Leave Me",
     meta:"Track 02 \u2022 Still Here EP",
-    href:"never-leave-me.html",
+    href:"/never-leave-me",
     spotify:"6MPbVyKBbMaiuzldaWiJzB",
     desc:"A heartfelt prayer of relief and gratitude for God's constant presence through difficult moments.",
     note:"Featured for this 3-week spotlight cycle from the Still Here EP."
@@ -18,7 +18,7 @@ var featuredSongs=[
   {
     title:"Baba Don't Let Me Go",
     meta:"Track 03 \u2022 Still Here EP",
-    href:"baba-dont-let-me-go.html",
+    href:"/baba-dont-let-me-go",
     spotify:"49Kg61O80JvcwyG6Mg3oXO",
     desc:"A heartfelt song from the Still Here EP about depending on God's guidance and presence through every season.",
     note:"From the latest EP, selected as the current spotlight track."
@@ -26,7 +26,7 @@ var featuredSongs=[
   {
     title:"On My Mind Jesus",
     meta:"Track 04 \u2022 Still Here EP",
-    href:"on-my-mind-jesus.html",
+    href:"/on-my-mind-jesus",
     spotify:"552IJIwN4XvklG1O8T0Odg",
     desc:"A joyful Afrogospel song about gratitude, protection, and keeping Jesus at the center of daily life.",
     note:"Featured for this 3-week spotlight cycle from the Still Here EP."

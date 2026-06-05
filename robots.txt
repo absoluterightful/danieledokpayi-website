@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://danieledokpayi.com/sitemap.xml
+Sitemap: https://www.danieledokpayi.com/sitemap.xml
