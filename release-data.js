@@ -35,20 +35,18 @@ var siteReleaseData={
         cover:"carry-me-dey-go.jpg",
         coverAlt:"Carry Me Dey Go cover art",
         description:"An uplifting Afrogospel song about trusting God's guidance through every season.",
-        href:"https://danieledokpayi.ampl.ink/Mvr5p",
+        href:"/carry-me-dey-go",
         label:"Single",
-        cta:"Listen Now",
-        external:true
+        cta:"Listen Now"
       },
       {
         title:"Dance To The Beat",
         cover:"dance-to-the-beat.jpg",
         coverAlt:"Dance To The Beat cover art",
         description:"A joyful Afro-fusion celebration of faith, praise, and gratitude.",
-        href:"https://danieledokpayi.ampl.ink/jKvkv",
+        href:"/dance-to-the-beat",
         label:"Single",
-        cta:"Listen Now",
-        external:true
+        cta:"Listen Now"
       }
     ]
   },
