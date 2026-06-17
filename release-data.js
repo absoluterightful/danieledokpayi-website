@@ -17,7 +17,18 @@ var siteReleaseData={
     ]
   },
   catalog:{
-    albums:[],
+    albums:[
+      {
+        title:"Veil Of Hope",
+        cover:"veil-of-hope-cover-blurred.jpg",
+        coverAlt:"Blurred Veil Of Hope album cover preview",
+        description:"Album in progress. Coming Early 2027.",
+        href:"/coming-soon",
+        label:"Album - Locked",
+        cta:"Locked",
+        locked:true
+      }
+    ],
     eps:[
       {
         title:"Still Here",
@@ -104,7 +115,8 @@ var siteReleaseData={
 
   function releaseCard(item){
     var target=item.external?' target="_blank" rel="noopener"':'';
-    return '<article class="music-slide"><div class="card"><img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" /><div class="folder-label" style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons"><a class="btn btn-primary" href="'+esc(item.href)+'"'+target+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a></div></div></article>';
+    var action=item.locked?'<span class="btn btn-locked" aria-disabled="true">'+esc(item.cta||"Locked")+'</span>':'<a class="btn btn-primary" href="'+esc(item.href)+'"'+target+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a>';
+    return '<article class="music-slide"><div class="card"><img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" /><div class="folder-label" style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
   }
 
   function emptyFolder(label){
