@@ -42,6 +42,16 @@ var siteReleaseData={
     ],
     singles:[
       {
+        title:"Veil Of Hope",
+        cover:"veil-of-hope-single-cover.jpg",
+        coverAlt:"Veil Of Hope single cover art",
+        description:"Lead single preview from the upcoming Veil Of Hope album.",
+        href:"/coming-soon",
+        label:"Single - Locked",
+        cta:"Locked",
+        locked:true
+      },
+      {
         title:"Carry Me Dey Go",
         cover:"carry-me-dey-go.jpg",
         coverAlt:"Carry Me Dey Go cover art",
