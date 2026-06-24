@@ -20,13 +20,12 @@ var siteReleaseData={
     albums:[
       {
         title:"Veil Of Hope",
-        cover:"veil-of-hope-cover-blurred.jpg",
-        coverAlt:"Blurred Veil Of Hope album cover preview",
+        cover:"veil-of-hope-cover.png",
+        coverAlt:"Veil Of Hope album cover",
         description:"Album in progress. Coming Early 2027.",
         href:"/coming-soon",
-        label:"Album - Locked",
-        cta:"Locked",
-        locked:true
+        label:"Album Preview",
+        cta:"Preview Album"
       }
     ],
     eps:[
