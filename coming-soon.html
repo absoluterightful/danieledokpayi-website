@@ -52,7 +52,7 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 70% 15%,rgba(217,108,59,.22),transparent 35%),linear-gradient(180deg,var(--brown),var(--dark));color:var(--cream);min-height:100vh}
     a{color:inherit}.nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 7vw;background:rgba(16,8,5,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .logo{color:var(--gold);font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:13px;text-decoration:none}
+    .logo{display:inline-flex;align-items:center;text-decoration:none;line-height:0;flex:0 0 auto}.logo-img{display:block;height:46px;width:auto;max-width:240px;object-fit:contain}
     .nav-links{display:flex;gap:22px;font-size:13px;text-transform:uppercase;letter-spacing:.12em}
     .nav-links a{text-decoration:none;opacity:.82}.nav-links a:hover,.nav-links a.active{color:var(--gold);opacity:1}
     .menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--cream);border-radius:12px;padding:8px 11px;font-size:22px;line-height:1;cursor:pointer}
@@ -84,11 +84,11 @@
     .back{display:inline-flex;margin-top:22px;color:var(--muted);text-decoration:none}.back:hover{color:var(--gold)}
     footer{text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line);background:#0b0503}
     @media(max-width:950px){.wrap{grid-template-columns:1fr;max-width:760px}.card,.teaser{padding:38px 28px}.card{text-align:center}.teaser-top{grid-template-columns:1fr}.cover-preview{max-width:360px;width:100%;margin:0 auto}.album-tracklist{grid-template-columns:1fr}}
-    @media(max-width:850px){.nav{padding:15px 20px}.menu-toggle{display:block}.nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}.menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}.wrap{padding:110px 20px 60px}.card,.teaser{padding:34px 22px}.track-preview{padding:20px}}
+    @media(max-width:850px){.nav{padding:15px 20px}.logo-img{height:32px;max-width:178px}.menu-toggle{display:block}.nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}.menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}.wrap{padding:110px 20px 60px}.card,.teaser{padding:34px 22px}.track-preview{padding:20px}}
   </style>
 </head>
 <body>
-  <nav class="nav"><a class="logo" href="/">Daniel Edokpayi</a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button><div class="nav-links"><a href="/">Home</a><a href="/music">Music</a><a href="/about">About</a><a href="/contact">Contact</a><a class="active" href="/coming-soon">Coming Soon</a></div></nav>
+  <nav class="nav"><a class="logo" href="/" aria-label="Daniel Edokpayi home"><img class="logo-img" src="daniel-name-logo-nav.png" alt="Daniel Edokpayi"></a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button><div class="nav-links"><a href="/">Home</a><a href="/music">Music</a><a href="/about">About</a><a href="/contact">Contact</a><a class="active" href="/coming-soon">Coming Soon</a></div></nav>
   <main class="wrap">
     <section class="card">
       <h1>COMING SOON</h1>
