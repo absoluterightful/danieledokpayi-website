@@ -50,77 +50,9 @@
         <div><img class="art" src="veil-of-hope-cover.png" alt="Veil Of Hope album cover art"></div>
       </div>
     </section>
-    <section class="exclusive-content" id="exclusive-content" aria-labelledby="exclusive-content-title">
-      <div class="content-head">
-        <div class="section-title">Unlocked</div>
-        <h2 id="exclusive-content-title">Exclusive Content</h2>
-        <p class="muted" style="max-width:760px;margin:0 auto;">Behind the music, the heart, and the next chapter.</p>
-      </div>
-      <div class="content-grid">
-        <article class="content-card large">
-          <img src="still-here-cover.jpg" alt="Still Here EP cover art">
-          <div>
-            <div class="section-title">How The Album Was Made</div>
-            <h3>From real seasons into real songs.</h3>
-            <p class="muted">The music starts with honest moments: faith, pressure, prayer, reflection, and the feeling of still standing after hard chapters. Each idea becomes a melody, then a message, then a full song built around hope.</p>
-            <ul class="note-list">
-              <li>Voice notes and rough melodies become the first sketches.</li>
-              <li>Lyrics are shaped around the story and the feeling behind it.</li>
-              <li>The final sound blends Afrogospel warmth with Afro R&amp;B and AfroSoul texture.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="content-card">
-          <div class="section-title">Thought Process</div>
-          <h3>Faith first, feeling honest.</h3>
-          <p class="muted">The goal is to make music that sounds good but also carries something deeper: comfort, gratitude, healing, and the reminder that God is present even when life feels heavy.</p>
-        </article>
-        <article class="content-card">
-          <div class="section-title">Future Things</div>
-          <h3>More music is being built.</h3>
-          <p class="muted">Upcoming ideas include more singles, deeper album storytelling, visual moments, live versions, and personal updates from the creative process.</p>
-        </article>
-        <article class="content-card">
-          <div class="section-title">Exclusive Updates</div>
-          <h3>Private notes for the journey.</h3>
-          <p class="muted">This section can grow with unreleased lyrics, studio thoughts, behind-the-scenes photos, early announcements, and messages for supporters.</p>
-        </article>
-        <article class="content-card">
-          <div class="section-title">Coming Soon</div>
-          <h3>The vault will keep expanding.</h3>
-          <p class="muted">New entries can be added here whenever there is a new song, album milestone, cover reveal, release date, or personal reflection to share.</p>
-        </article>
-      </div>
-      <div class="buttons"><a class="btn btn-primary" href="/music" onclick="trackClick('Exclusive to Music')">Explore Music</a><a class="btn btn-outline" href="/coming-soon" onclick="trackClick('Exclusive to Coming Soon')">Coming Soon</a></div>
-    </section>
+    <div id="exclusive-vault"></div>
   </main>
   <footer>&copy; 2026 Daniel Edokpayi. All rights reserved.</footer>
-  <script>
-    (function(){
-      var user='DEM';
-      var pass='EdoVault$2004';
-      var form=document.getElementById('exclusive-form');
-      var status=document.getElementById('login-status');
-      var content=document.getElementById('exclusive-content');
-      function unlock(showMessage){
-        document.body.classList.add('unlocked');
-        if(showMessage){status.className='status ok';status.textContent='Correct. Opening exclusive page...';}
-        window.setTimeout(function(){content.scrollIntoView({behavior:'smooth',block:'start'});},showMessage?650:0);
-      }
-      if(sessionStorage.getItem('exclusiveUnlocked')==='true'){unlock(false);}
-      form.addEventListener('submit',function(event){
-        event.preventDefault();
-        var enteredUser=document.getElementById('username').value.trim();
-        var enteredPass=document.getElementById('password').value;
-        if(enteredUser===user&&enteredPass===pass){
-          sessionStorage.setItem('exclusiveUnlocked','true');
-          unlock(true);
-        }else{
-          status.className='status error';
-          status.textContent='Password or username is wrong.';
-        }
-      });
-    })();
-  </script>
+  <script defer src="exclusive-vault.js?v=2"></script>
 </body>
 </html>
