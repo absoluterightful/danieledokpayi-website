@@ -19,7 +19,7 @@ var siteReleaseData={
         title:"Veil Of Hope",
         cover:"veil-of-hope-cover.png",
         coverAlt:"Veil Of Hope album cover",
-        description:"Album in progress. Coming Early 2027.",
+        description:"Debut album era in progress. Assurance leads the way toward Veil Of Hope in Early 2027.",
         href:"/coming-soon",
         label:"Album Preview",
         cta:"Preview Album"
