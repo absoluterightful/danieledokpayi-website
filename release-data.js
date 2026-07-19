@@ -1,19 +1,16 @@
 var siteReleaseData={
   latestRelease:{
-    title:"Still Here EP",
-    type:"EP",
-    releaseDate:"May 29, 2026",
-    cover:"still-here-cover.jpg",
-    coverAlt:"Still Here EP cover art by Daniel Edokpayi",
-    description:"Still Here blends Afrogospel, Afro R&B, and AfroSoul into a warm, honest project about faith, gratitude, healing, and God's presence in difficult seasons.",
-    href:"/still-here",
-    streamLabel:"Stream Still Here",
+    title:"Assurance",
+    type:"Single",
+    releaseDate:"July 31, 2026",
+    cover:"assurance-cover.png",
+    coverAlt:"Assurance single cover art by Daniel Edokpayi",
+    description:"Assurance is the lead single from the upcoming Veil Of Hope album, carrying a message of faith, confidence, and trusting God's promise through every season.",
+    href:"/assurance",
+    streamLabel:"View Countdown",
     catalogLabel:"View Full Music Catalog",
     tracks:[
-      {number:"01",title:"You Stay",href:"/you-stay",style:"Afro Soul / Gospel"},
-      {number:"02",title:"Never Leave Me",href:"/never-leave-me",style:"Afro R&B / Gospel"},
-      {number:"03",title:"Baba Don't Let Me Go",href:"/baba-dont-let-me-go",style:"Afro R&B / Gospel"},
-      {number:"04",title:"On My Mind Jesus",href:"/on-my-mind-jesus",style:"Afro Gospel"}
+      {number:"01",title:"Assurance",href:"/assurance",style:"Single - Releases July 31, 2026"}
     ]
   },
   catalog:{
@@ -70,6 +67,12 @@ var siteReleaseData={
     ]
   },
   timeline:[
+    {
+      date:"Jul 31, 2026",
+      title:"Assurance",
+      description:"Lead single from the upcoming Veil Of Hope album.",
+      type:"Single"
+    },
     {
       date:"Apr 20, 2024",
       title:"Carry Me Dey Go",
