@@ -18,8 +18,9 @@ var siteReleaseData={
       {
         title:"Veil Of Hope",
         cover:"veil-of-hope-cover.png",
+        altCover:"veil-of-hope-alt-cover.png",
         coverAlt:"Veil Of Hope album cover",
-        description:"Debut album era in progress. Assurance leads the way toward Veil Of Hope in Early 2027.",
+        description:"Debut album in progress. Assurance leads the way toward Veil Of Hope in Early 2027.",
         href:"/coming-soon",
         label:"Album Preview",
         cta:"Preview Album"
@@ -68,12 +69,6 @@ var siteReleaseData={
   },
   timeline:[
     {
-      date:"Jul 31, 2026",
-      title:"Assurance",
-      description:"Lead single from the upcoming Veil Of Hope album.",
-      type:"Single"
-    },
-    {
       date:"Apr 20, 2024",
       title:"Carry Me Dey Go",
       description:"Daniel's first single, later followed by acapella and instrumental versions in 2025.",
@@ -90,6 +85,12 @@ var siteReleaseData={
       title:"Still Here EP",
       description:"A warm Afrogospel, Afro R&B, and AfroSoul project about faith, healing, and God's presence.",
       type:"EP"
+    },
+    {
+      date:"Jul 31, 2026",
+      title:"Assurance",
+      description:"Lead single from the upcoming Veil Of Hope album.",
+      type:"Single"
     }
   ]
 };
@@ -127,7 +128,8 @@ var siteReleaseData={
   function releaseCard(item){
     var target=item.external?' target="_blank" rel="noopener"':'';
     var action=item.locked?'<span class="btn btn-locked" aria-disabled="true">'+esc(item.cta||"Locked")+'</span>':'<a class="btn btn-primary" href="'+esc(item.href)+'"'+target+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a>';
-    return '<article class="music-slide"><div class="card"><img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" /><div class="folder-label" style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
+    var cover=item.altCover?'<a class="catalog-cover-stack" href="'+esc(item.href)+'" onclick="trackClick(\''+clickLabel(item.title)+' Covers - Folder\')" aria-label="Open '+esc(item.title)+' cover gallery"><span class="catalog-cover-peek" aria-hidden="true"><img src="'+esc(item.altCover)+'" alt=""></span><span class="catalog-cover-main"><img src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'"><span class="catalog-cover-count">2 Covers</span></span></a>':'<img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" />';
+    return '<article class="music-slide"><div class="card">'+cover+'<div class="folder-label" style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
   }
 
   function emptyFolder(label){
