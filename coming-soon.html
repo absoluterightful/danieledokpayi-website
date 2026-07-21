@@ -9,6 +9,9 @@
     gtag('config','AW-16511764603');
     function trackClick(label){if(typeof gtag==='function'){gtag('event','signup_click',{event_category:'Coming Soon Page',event_label:label});}}
     function toggleMenu(){document.body.classList.toggle('menu-open');}
+    function openCoverGallery(){const gallery=document.getElementById('cover-gallery');if(!gallery){return;}gallery.classList.add('open');document.body.classList.add('gallery-open');trackClick('Open Veil Of Hope Covers');}
+    function closeCoverGallery(){const gallery=document.getElementById('cover-gallery');if(!gallery){return;}gallery.classList.remove('open');document.body.classList.remove('gallery-open');}
+    document.addEventListener('keydown',function(event){if(event.key==='Escape'){closeCoverGallery();}});
     function validateSignup(event){
       const form = event.target;
       const input = form.querySelector('input[name="email"]');
@@ -59,9 +62,12 @@
     .menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--cream);border-radius:12px;padding:8px 11px;font-size:22px;line-height:1;cursor:pointer}
     .hero{min-height:100vh;padding:128px 7vw 76px;display:grid;align-items:center;border-bottom:1px solid var(--line)}
     .hero-grid{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr);gap:58px;align-items:center}
-    .cover-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(229,170,103,.28);box-shadow:0 34px 90px rgba(0,0,0,.5);background:#130905}
-    .cover-frame:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(229,170,103,.24),transparent 34%,rgba(217,108,59,.16));pointer-events:none}
-    .cover-frame img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+    .cover-frame{position:relative;display:block;width:100%;border:0;background:transparent;color:inherit;padding:0;text-align:left;cursor:pointer;transition:.2s ease}
+    .cover-frame:hover{transform:translateY(-3px)}.cover-frame:focus-visible{outline:2px solid var(--gold);outline-offset:10px;border-radius:28px}
+    .cover-stack-peek{position:absolute;z-index:1;inset:20px -22px -20px 22px;border-radius:28px;overflow:hidden;border:1px solid rgba(229,170,103,.22);box-shadow:0 24px 70px rgba(0,0,0,.42);opacity:.78;transform:rotate(2.5deg);background:#130905}
+    .cover-stack-main{position:relative;z-index:2;border-radius:28px;overflow:hidden;border:1px solid rgba(229,170,103,.28);box-shadow:0 34px 90px rgba(0,0,0,.5);background:#130905}
+    .cover-stack-main:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(229,170,103,.24),transparent 34%,rgba(217,108,59,.16));pointer-events:none;z-index:2}
+    .cover-frame img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.cover-count{position:absolute;right:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;padding:9px 13px;border:1px solid rgba(247,230,207,.28);border-radius:999px;background:rgba(16,8,5,.74);backdrop-filter:blur(10px);color:var(--cream);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
     .eyebrow{color:var(--gold);font-size:13px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;margin:0 0 14px}
     h1{font-size:clamp(54px,8vw,108px);line-height:.9;letter-spacing:-.06em;margin:0}
     .hero-copy{max-width:700px}.hero-copy .lead{font-size:clamp(20px,2.3vw,30px);line-height:1.3;color:var(--cream);margin:24px 0 14px}
@@ -78,16 +84,20 @@
     .signup-card h2{font-size:clamp(30px,4vw,50px);margin-bottom:10px}.signup-card p{margin:0;color:var(--muted)}
     .signup{display:grid;gap:12px;width:100%;margin:0}.signup input{width:100%;padding:16px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--cream);font-size:16px;outline:none}.signup input::placeholder{color:var(--muted)}.signup button{width:100%;padding:16px 24px;border:0;border-radius:999px;background:linear-gradient(135deg,var(--burnt),var(--deep));color:white;font-weight:900;letter-spacing:.04em;cursor:pointer}.signup button:hover{transform:translateY(-1px)}
     .form-message{min-height:22px;margin-top:12px;font-size:14px;color:var(--muted)}.form-message.error{color:#ffb4a2}
+    body.gallery-open{overflow:hidden}.cover-gallery{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,4,3,.82);backdrop-filter:blur(18px)}.cover-gallery.open{display:flex}.cover-gallery-panel{width:min(960px,100%);max-height:calc(100vh - 48px);overflow:auto;border:1px solid rgba(229,170,103,.26);border-radius:18px;background:linear-gradient(145deg,rgba(33,18,12,.96),rgba(16,8,5,.98));box-shadow:0 34px 90px rgba(0,0,0,.62);padding:24px}.cover-gallery-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px}.cover-gallery-head h2{font-size:clamp(30px,4vw,48px);margin:0}.cover-gallery-close{border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--cream);width:44px;height:44px;font-size:28px;line-height:1;cursor:pointer}.cover-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.gallery-cover{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);padding:12px}.gallery-cover img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}.gallery-cover h3{margin:14px 0 4px;font-size:20px}.gallery-cover p{margin:0;color:var(--muted)}
     footer{text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line);background:#0b0503}
     @media(max-width:980px){.hero-grid,.signup-card{grid-template-columns:1fr}.cover-frame{max-width:520px;margin:0 auto}.era-grid{grid-template-columns:1fr}.track-grid{grid-template-columns:repeat(2,1fr)}.signup-card{padding:28px}}
-    @media(max-width:850px){.nav{padding:15px 20px}.logo-img{height:32px;max-width:178px}.menu-toggle{display:block}.nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}.menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}.hero{padding:112px 22px 64px}section{padding:66px 22px}.era-stats{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:8px}.track-head{display:block}.track-grid{grid-template-columns:1fr}}
+    @media(max-width:850px){.nav{padding:15px 20px}.logo-img{height:32px;max-width:178px}.menu-toggle{display:block}.nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}.menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}.hero{padding:112px 22px 64px}section{padding:66px 22px}.cover-stack-peek{inset:14px -12px -14px 12px}.era-stats{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:8px}.track-head{display:block}.track-grid{grid-template-columns:1fr}.cover-gallery{padding:16px}.cover-gallery-panel{padding:18px}.cover-gallery-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <nav class="nav"><a class="logo" href="/" aria-label="Daniel Edokpayi home"><img class="logo-img" src="daniel-name-logo-nav.png" alt="Daniel Edokpayi"></a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button><div class="nav-links"><a href="/">Home</a><a href="/music">Music</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/exclusive">Exclusive</a><a class="active" href="/coming-soon">Coming Soon</a></div></nav>
   <header class="hero">
     <div class="hero-grid">
-      <div class="cover-frame"><img src="veil-of-hope-cover.png" alt="Veil Of Hope album cover"></div>
+      <button class="cover-frame" type="button" onclick="openCoverGallery()" aria-haspopup="dialog" aria-controls="cover-gallery" aria-label="Open Veil Of Hope cover gallery">
+        <span class="cover-stack-peek" aria-hidden="true"><img src="veil-of-hope-alt-cover.png" alt=""></span>
+        <span class="cover-stack-main"><img src="veil-of-hope-cover.png" alt="Veil Of Hope album cover"><span class="cover-count">2 Covers</span></span>
+      </button>
       <div class="hero-copy">
         <p class="eyebrow">The Album Era</p>
         <h1>Veil Of Hope</h1>
@@ -154,6 +164,18 @@
       </div>
     </div>
   </section>
+  <div class="cover-gallery" id="cover-gallery" role="dialog" aria-modal="true" aria-labelledby="cover-gallery-title" onclick="if(event.target===this) closeCoverGallery()">
+    <div class="cover-gallery-panel">
+      <div class="cover-gallery-head">
+        <div><div class="section-title">Album Covers</div><h2 id="cover-gallery-title">Veil Of Hope Artwork</h2><p class="muted" style="margin:8px 0 0;">A closer look at the cover art for the Veil Of Hope era.</p></div>
+        <button class="cover-gallery-close" type="button" onclick="closeCoverGallery()" aria-label="Close cover gallery">&times;</button>
+      </div>
+      <div class="cover-gallery-grid">
+        <article class="gallery-cover"><img src="veil-of-hope-cover.png" alt="Veil Of Hope main album cover"><h3>Main Cover</h3><p>The official Veil Of Hope album-era artwork.</p></article>
+        <article class="gallery-cover"><img src="veil-of-hope-alt-cover.png" alt="Veil Of Hope alternate album cover"><h3>Alternate Cover</h3><p>A darker alternate cover focused on the veil, light, and reflective mood of the album.</p></article>
+      </div>
+    </div>
+  </div>
   <footer>&copy; 2026 Daniel Edokpayi. All rights reserved.</footer>
 </body>
 </html>
