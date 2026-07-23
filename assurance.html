@@ -16,7 +16,7 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="animations.css">
   <link rel="stylesheet" href="announcement.css?v=3">
-  <script defer src="announcement.js?v=1"></script>
+  <script defer src="announcement.js?v=3"></script>
   <link rel="stylesheet" href="christmas.css?v=schedule1" media="not all" data-seasonal-theme>
   <script defer src="seasonal-schedule.js?v=schedule1"></script>
   <script defer src="countdown.js?v=1"></script>
@@ -78,7 +78,7 @@
     <section class="panel" data-countdown>
       <div class="eyebrow">Lead Single</div>
       <h1>Assurance</h1>
-      <p class="muted">The lead single from <em>Veil Of Hope</em> arrives July 31, 2026 at 12:00 AM New York time.</p>
+      <p class="muted" data-assurance-out-text="The lead single from Veil Of Hope is out now.">The lead single from <em>Veil Of Hope</em> arrives July 31, 2026 at 12:00 AM New York time.</p>
       <div class="release-date" data-countdown-status>Releasing July 31, 2026</div>
       <div class="countdown" aria-label="Countdown to Assurance release">
         <div class="time-box"><strong data-countdown-unit="days">0</strong><span>Days</span></div>
@@ -86,9 +86,9 @@
         <div class="time-box"><strong data-countdown-unit="minutes">00</strong><span>Minutes</span></div>
         <div class="time-box"><strong data-countdown-unit="seconds">00</strong><span>Seconds</span></div>
       </div>
-      <p class="muted">Countdown uses New York time and will switch to an out-now message when the release date arrives.</p>
+      <p class="muted" data-assurance-out-text="Assurance is available now through the official release page.">Countdown uses New York time and will switch to an out-now message when the release date arrives.</p>
       <div class="buttons">
-        <a class="btn btn-primary" href="/music" onclick="trackClick('Assurance Countdown - Music')">Back to Music</a>
+        <a class="btn btn-primary" href="/presave-assurance" data-assurance-action onclick="trackClick('Assurance Pre-save - Countdown Page')">Pre-save Now!!</a>
         <a class="btn btn-outline" href="/coming-soon" onclick="trackClick('Assurance Countdown - Veil Of Hope')">View Veil Of Hope</a>
       </div>
     </section>

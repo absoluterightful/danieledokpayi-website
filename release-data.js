@@ -6,8 +6,8 @@ var siteReleaseData={
     cover:"assurance-cover.png",
     coverAlt:"Assurance single cover art by Daniel Edokpayi",
     description:"Assurance is the lead single from the upcoming Veil Of Hope album, carrying a message of faith, confidence, and trusting God's promise through every season.",
-    href:"/assurance",
-    streamLabel:"View Countdown",
+    href:"/presave-assurance",
+    streamLabel:"Pre-save Now!!",
     catalogLabel:"View Full Music Catalog",
     tracks:[
       {number:"01",title:"Assurance",href:"/assurance",style:"Single - Releases July 31, 2026"}
@@ -43,9 +43,9 @@ var siteReleaseData={
         cover:"assurance-cover.png",
         coverAlt:"Assurance single cover art",
         description:"Lead single from the upcoming Veil Of Hope album. Releasing July 31, 2026.",
-        href:"/assurance",
-        label:"Single - Countdown",
-        cta:"View Countdown"
+        href:"/presave-assurance",
+        label:"Single - Pre-save",
+        cta:"Pre-save Now!!"
       },
       {
         title:"Carry Me Dey Go",
@@ -96,6 +96,19 @@ var siteReleaseData={
 };
 
 (function(){
+  var assuranceReleased=Date.now()>=Date.UTC(2026,6,31,4,0,0);
+  var assurance=siteReleaseData.latestRelease;
+  var assuranceSingle=siteReleaseData.catalog.singles[0];
+
+  if(assuranceReleased){
+    assurance.releaseDate="Out Now";
+    assurance.streamLabel="Listen Now!!";
+    assurance.tracks[0].style="Single - Out Now";
+    assuranceSingle.description="Lead single from the upcoming Veil Of Hope album. Out now.";
+    assuranceSingle.label="Single - Out Now";
+    assuranceSingle.cta="Listen Now!!";
+  }
+
   function esc(value){
     return String(value||"").replace(/[&<>"']/g,function(char){
       return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char];
@@ -113,23 +126,25 @@ var siteReleaseData={
     if(!release){return;}
 
     var tracklist=(release.tracks||[]).map(function(track){
-      return '<li><a href="'+esc(track.href)+'" onclick="trackClick(\''+clickLabel(track.title)+' - Tracklist\')"><div><span>'+esc(track.number)+'</span>'+esc(track.title)+'</div><small>'+esc(track.style)+'</small></a></li>';
+      return '<li><a href="'+esc(track.href)+'" onclick="trackClick(\''+clickLabel(track.title)+' - Tracklist\')"><div><span>'+esc(track.number)+'</span>'+esc(track.title)+'</div><small data-assurance-release-label>'+esc(track.style)+'</small></a></li>';
     }).join("");
 
     if(homeGrid){
-      homeGrid.innerHTML='<div><img class="cover" src="'+esc(release.cover)+'" alt="'+esc(release.coverAlt)+'" /></div><div class="card"><div class="section-title">Latest Release</div><h2>'+esc(release.title)+'</h2><p class="muted">'+esc(release.description)+'</p><ol class="tracklist">'+tracklist+'</ol><div class="buttons" style="margin-top:28px;"><a class="btn btn-primary" href="'+esc(release.href)+'" rel="noopener" onclick="trackClick(\''+clickLabel(release.streamLabel)+' - Latest Release\')">'+esc(release.streamLabel)+'</a><a class="btn btn-outline" href="/music" rel="noopener" onclick="trackClick(\'View Full Music Catalog\')">'+esc(release.catalogLabel)+'</a></div></div>';
+      homeGrid.innerHTML='<div><img class="cover" src="'+esc(release.cover)+'" alt="'+esc(release.coverAlt)+'" /></div><div class="card"><div class="section-title">Latest Release</div><h2>'+esc(release.title)+'</h2><p class="muted">'+esc(release.description)+'</p><ol class="tracklist">'+tracklist+'</ol><div class="buttons" style="margin-top:28px;"><a class="btn btn-primary" href="'+esc(release.href)+'" rel="noopener" data-assurance-action onclick="trackClick(\''+clickLabel(release.streamLabel)+' - Latest Release\')">'+esc(release.streamLabel)+'</a><a class="btn btn-outline" href="/music" rel="noopener" onclick="trackClick(\'View Full Music Catalog\')">'+esc(release.catalogLabel)+'</a></div></div>';
     }
 
     if(musicGrid){
-      musicGrid.innerHTML='<div><img class="cover" src="'+esc(release.cover)+'" alt="'+esc(release.coverAlt)+'" /></div><div class="card"><div class="section-title">Latest Release</div><h2>'+esc(release.title)+'</h2><p class="muted">'+esc(release.description)+'</p><div class="buttons"><a class="btn btn-primary" href="'+esc(release.href)+'" rel="noopener" onclick="trackClick(\''+clickLabel(release.title)+' - Music Page\')">'+esc(release.streamLabel)+'</a><a class="btn btn-outline" href="/#release">View on Home</a></div></div>';
+      musicGrid.innerHTML='<div><img class="cover" src="'+esc(release.cover)+'" alt="'+esc(release.coverAlt)+'" /></div><div class="card"><div class="section-title">Latest Release</div><h2>'+esc(release.title)+'</h2><p class="muted">'+esc(release.description)+'</p><div class="buttons"><a class="btn btn-primary" href="'+esc(release.href)+'" rel="noopener" data-assurance-action onclick="trackClick(\''+clickLabel(release.title)+' - Music Page\')">'+esc(release.streamLabel)+'</a><a class="btn btn-outline" href="/#release">View on Home</a></div></div>';
     }
   }
 
   function releaseCard(item){
     var target=item.external?' target="_blank" rel="noopener"':'';
-    var action=item.locked?'<span class="btn btn-locked" aria-disabled="true">'+esc(item.cta||"Locked")+'</span>':'<a class="btn btn-primary" href="'+esc(item.href)+'"'+target+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a>';
+    var assuranceAction=item.title==="Assurance"?" data-assurance-action":"";
+    var assuranceLabel=item.title==="Assurance"?' data-assurance-release-label data-released-label="Single - Out Now"':"";
+    var action=item.locked?'<span class="btn btn-locked" aria-disabled="true">'+esc(item.cta||"Locked")+'</span>':'<a class="btn btn-primary" href="'+esc(item.href)+'"'+target+assuranceAction+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a>';
     var cover=item.altCover?'<a class="catalog-cover-stack" href="'+esc(item.href)+'" onclick="trackClick(\''+clickLabel(item.title)+' Covers - Folder\')" aria-label="Open '+esc(item.title)+' cover gallery"><span class="catalog-cover-peek" aria-hidden="true"><img src="'+esc(item.altCover)+'" alt=""></span><span class="catalog-cover-main"><img src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'"><span class="catalog-cover-count">2 Covers</span></span></a>':'<img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" />';
-    return '<article class="music-slide"><div class="card">'+cover+'<div class="folder-label" style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
+    return '<article class="music-slide"><div class="card">'+cover+'<div class="folder-label"'+assuranceLabel+' style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
   }
 
   function emptyFolder(label){
