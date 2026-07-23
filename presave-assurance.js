@@ -1,6 +1,6 @@
 (() => {
   const releaseTime = Date.UTC(2026, 6, 31, 4, 0, 0);
-  const presaveUrl = 'https://distrokid.com/hyperfollow/danieledokpayi/assurance?ref=release';
+  const presaveUrl = 'https://danieledokpayi.lnk.to/5kz9CB';
 
   function initPresave() {
     const button = document.querySelector('[data-presave-button]');
