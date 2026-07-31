@@ -1,6 +1,6 @@
 (() => {
   const releaseTime = Date.UTC(2026, 6, 31, 4, 0, 0);
-  const assurancePage = '/presave-assurance';
+  const assurancePage = '/assurance#listen';
   let announcementText;
   let announcementLink;
 
@@ -12,11 +12,22 @@
     return isReleased() ? 'Assurance Out Now!!' : 'Assurance Coming Soon';
   }
 
-  function updateMessage() {
-    if (announcementText) announcementText.textContent = getMessage();
-    if (announcementLink) announcementLink.href = assurancePage;
+  function removeAnnouncement() {
+    const bar = document.querySelector('.announcement-bar');
+    if (bar) bar.remove();
+    document.documentElement.classList.remove('has-announcement');
+    announcementText = null;
+    announcementLink = null;
+  }
 
-    if (!isReleased()) return;
+  function updateMessage() {
+    if (!isReleased()) {
+      if (announcementText) announcementText.textContent = getMessage();
+      if (announcementLink) announcementLink.href = assurancePage;
+      return;
+    }
+
+    removeAnnouncement();
 
     document.querySelectorAll('[data-assurance-action]').forEach((action) => {
       action.textContent = action.getAttribute('data-released-label') || 'Listen Now!!';
@@ -35,6 +46,10 @@
   function renderAnnouncement() {
     const nav = document.querySelector('.nav');
     if (!nav || document.querySelector('.announcement-bar')) return;
+    if (isReleased()) {
+      updateMessage();
+      return;
+    }
 
     const bar = document.createElement('aside');
     bar.className = 'announcement-bar';

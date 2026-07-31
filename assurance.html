@@ -16,23 +16,22 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="animations.css">
   <link rel="stylesheet" href="announcement.css?v=3">
-  <script defer src="announcement.js?v=3"></script>
+  <script defer src="announcement.js?v=4"></script>
   <link rel="stylesheet" href="christmas.css?v=schedule1" media="not all" data-seasonal-theme>
   <script defer src="seasonal-schedule.js?v=schedule1"></script>
-  <script defer src="countdown.js?v=1"></script>
   <script defer src="assurance-page.js?v=1"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the meaning, credits, artwork, and release details for Assurance by Daniel Edokpayi." />
+  <meta name="description" content="Listen to Assurance by Daniel Edokpayi and discover the meaning behind the new single, out now on all major platforms." />
   <link rel="canonical" href="https://www.danieledokpayi.com/assurance" />
   <meta property="og:type" content="music.song" />
   <meta property="og:site_name" content="Daniel Edokpayi" />
   <meta property="og:title" content="Assurance | Daniel Edokpayi" />
-  <meta property="og:description" content="Discover the meaning behind Assurance by Daniel Edokpayi, releasing July 31, 2026." />
+  <meta property="og:description" content="Listen to Assurance by Daniel Edokpayi and discover the meaning behind the new single." />
   <meta property="og:url" content="https://www.danieledokpayi.com/assurance" />
   <meta property="og:image" content="https://www.danieledokpayi.com/assurance-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Assurance | Daniel Edokpayi" />
-  <meta name="twitter:description" content="Discover the meaning behind Assurance by Daniel Edokpayi, releasing July 31, 2026." />
+  <meta name="twitter:description" content="Listen to Assurance by Daniel Edokpayi and discover the meaning behind the new single." />
   <meta name="twitter:image" content="https://www.danieledokpayi.com/assurance-cover.png" />
   <title>Assurance | Daniel Edokpayi</title>
   <style>
@@ -54,39 +53,36 @@
     h1{font-size:clamp(52px,8vw,104px);line-height:.92;letter-spacing:-.06em;margin:16px 0 18px}
     .muted{color:var(--muted);font-size:18px;margin:0}
     .release-date{display:inline-flex;margin:26px 0 0;padding:10px 15px;border:1px solid rgba(229,170,103,.34);border-radius:999px;color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
-    .countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}
-    .time-box{padding:18px 12px;border:1px solid var(--line);border-radius:18px;background:rgba(16,8,5,.5);text-align:center}
-    .time-box strong{display:block;color:var(--cream);font-size:clamp(30px,5vw,52px);line-height:1;font-weight:900}
-    .time-box span{display:block;margin-top:8px;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
     .buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:0;border-radius:999px;color:inherit;font:inherit;text-decoration:none;font-weight:900;letter-spacing:.04em;cursor:pointer;transition:.2s ease}
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:linear-gradient(135deg,var(--burnt),var(--deep));color:#fff;box-shadow:0 18px 40px rgba(217,108,59,.24)}
     .btn-outline{border:1px solid rgba(247,230,207,.32);background:rgba(255,255,255,.035)}
-    .panel.is-released .countdown{display:none}
     .story-band{padding:100px 24px;background:#0b0503;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .story-inner,.details-inner{max-width:1080px;margin:0 auto}
+    .story-inner,.listen-inner{max-width:1080px;margin:0 auto}
     .section-title{color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:900;margin-bottom:14px}
     .story-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:start}
-    .story-grid h2,.details-grid h2{font-size:clamp(38px,6vw,72px);line-height:1;letter-spacing:-.04em;margin:0}
+    .story-grid h2,.listen-band h2{font-size:clamp(38px,6vw,72px);line-height:1;letter-spacing:-.04em;margin:0}
     .story-copy p{margin:0 0 22px;color:var(--muted);font-size:20px;line-height:1.75}
     .story-copy p:last-child{margin-bottom:0}
     .pull-quote{margin:34px 0 0;padding:8px 0 8px 24px;border-left:3px solid var(--burnt);color:var(--cream);font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.28}
-    .details-band{padding:96px 24px;background:linear-gradient(180deg,var(--brown),var(--dark))}
-    .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-    .credit-list{margin:34px 0 0;border-top:1px solid var(--line)}
-    .credit-row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
-    .credit-row dt{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    .credit-row dd{margin:0;color:var(--cream);font-size:18px}
-    .lyrics-copy{margin:26px 0 0;color:var(--muted);font-size:18px;max-width:460px}
+    .listen-band{padding:96px 24px;background:linear-gradient(180deg,var(--brown),var(--dark))}
+    .listen-head{text-align:center}.listen-copy{margin:20px auto 0;color:var(--muted);font-size:18px;max-width:620px}
+    .platform-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+    .platform-links a{display:flex;align-items:center;justify-content:center;gap:11px;min-height:68px;padding:16px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.04);text-decoration:none;font-weight:900;transition:.2s ease}
+    .platform-links a:hover{color:var(--gold);border-color:rgba(229,170,103,.72);transform:translateY(-2px)}
+    .brand-icon{width:30px;height:30px;flex:0 0 30px;border-radius:999px;padding:6px;background:rgba(255,255,255,.07);border:1px solid var(--line);object-fit:contain}
+    .listen-actions{display:flex;justify-content:center;margin-top:28px}
+    .lyrics-block{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;margin-top:76px;padding-top:70px;border-top:1px solid var(--line)}
+    .lyrics-copy{margin:0;color:var(--muted);font-size:18px;max-width:560px}
     .share-status{min-height:24px;margin:14px 0 0;color:var(--gold);font-size:13px}
     footer{text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line)}
     @media(max-width:850px){
       .nav{padding:15px 20px}.logo-img{height:32px;max-width:178px}.menu-toggle{display:block}
       .nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}
       .menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}
-      .wrap{grid-template-columns:1fr;padding-top:115px;gap:32px}.panel{padding:32px 22px}.countdown{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .story-band,.details-band{padding:72px 22px}.story-grid,.details-grid{grid-template-columns:1fr;gap:36px}.story-copy p{font-size:18px}.credit-row{grid-template-columns:105px 1fr;gap:14px}
+      .wrap{grid-template-columns:1fr;padding-top:115px;gap:32px}.panel{padding:32px 22px}
+      .story-band,.listen-band{padding:72px 22px}.story-grid,.lyrics-block{grid-template-columns:1fr;gap:30px}.story-copy p{font-size:18px}.platform-links{grid-template-columns:1fr}.lyrics-block{margin-top:58px;padding-top:54px}
     }
   </style>
   <script type="application/ld+json">
@@ -109,22 +105,15 @@
   <main>
     <section class="wrap">
       <div><img class="cover" src="assurance-cover.png" alt="Assurance cover art by Daniel Edokpayi"></div>
-      <section class="panel" data-countdown>
+      <section class="panel">
         <div class="eyebrow">Lead Single</div>
         <h1>Assurance</h1>
-        <p class="muted" data-assurance-out-text="The lead single from Veil Of Hope is out now.">The lead single from <em>Veil Of Hope</em> arrives July 31, 2026 at 12:00 AM New York time.</p>
-        <div class="release-date" data-countdown-status>Releasing July 31, 2026</div>
-        <div class="countdown" aria-label="Countdown to Assurance release">
-          <div class="time-box"><strong data-countdown-unit="days">0</strong><span>Days</span></div>
-          <div class="time-box"><strong data-countdown-unit="hours">00</strong><span>Hours</span></div>
-          <div class="time-box"><strong data-countdown-unit="minutes">00</strong><span>Minutes</span></div>
-          <div class="time-box"><strong data-countdown-unit="seconds">00</strong><span>Seconds</span></div>
-        </div>
-        <p class="muted" data-assurance-out-text="Assurance is available now through the official release page.">Countdown uses New York time and will switch to an out-now message when the release date arrives.</p>
+        <p class="muted">The lead single from <em>Veil Of Hope</em> is out now on all major music platforms.</p>
+        <div class="release-date">Out Now</div>
         <div class="buttons">
-          <a class="btn btn-primary" href="/presave-assurance" data-assurance-action onclick="trackClick('Assurance Pre-save - Countdown Page')">Pre-save Now!!</a>
+          <a class="btn btn-primary" href="#listen" onclick="trackClick('Assurance Listen - Story Page')">Listen Now!!</a>
           <a class="btn btn-outline" href="#meaning" onclick="trackClick('Assurance Song Meaning')">Song Meaning</a>
-          <a class="btn btn-outline" href="/coming-soon" onclick="trackClick('Assurance Countdown - Veil Of Hope')">View Veil Of Hope</a>
+          <a class="btn btn-outline" href="/coming-soon" onclick="trackClick('Assurance - Veil Of Hope')">View Veil Of Hope</a>
         </div>
       </section>
     </section>
@@ -143,27 +132,26 @@
       </div>
     </section>
 
-    <section class="details-band" aria-label="Assurance credits and lyrics">
-      <div class="details-inner details-grid">
-        <section id="credits" aria-labelledby="credits-title">
-          <div class="section-title">Song Details</div>
-          <h2 id="credits-title">Credits</h2>
-          <dl class="credit-list">
-            <div class="credit-row"><dt>Artist</dt><dd>Daniel Edokpayi</dd></div>
-            <div class="credit-row"><dt>Written by</dt><dd>Daniel Edokpayi</dd></div>
-            <div class="credit-row"><dt>Produced by</dt><dd>Daniel Edokpayi</dd></div>
-            <div class="credit-row"><dt>Arrangement</dt><dd>Daniel Edokpayi</dd></div>
-          </dl>
-        </section>
-        <section id="lyrics" aria-labelledby="lyrics-title">
-          <div class="section-title">Words and Music</div>
-          <h2 id="lyrics-title">Lyrics</h2>
-          <p class="lyrics-copy">Official lyrics will be added here following the release of <em>Assurance</em>.</p>
-          <div class="buttons">
-            <a class="btn btn-primary" href="/presave-assurance" data-assurance-action onclick="trackClick('Assurance Pre-save - Story Page')">Pre-save Now!!</a>
-            <button class="btn btn-outline" type="button" data-share-assurance>Share Assurance</button>
-          </div>
-          <p class="share-status" data-share-status aria-live="polite"></p>
+    <section class="listen-band" id="listen" aria-labelledby="listen-title">
+      <div class="listen-inner">
+        <div class="listen-head">
+          <div class="section-title">Listen Now</div>
+          <h2 id="listen-title">Choose Your Platform</h2>
+          <p class="listen-copy"><em>Assurance</em> is available now. Listen on the service you use every day.</p>
+        </div>
+        <div class="platform-links">
+          <a href="https://open.spotify.com/album/1p86lIIZvpe5xbhKuWn5Ay" target="_blank" rel="noopener" onclick="trackClick('Spotify - Assurance Story')"><img class="brand-icon" src="https://cdn.simpleicons.org/spotify/1DB954" alt="" aria-hidden="true">Spotify</a>
+          <a href="https://music.apple.com/us/album/assurance-single/6787508684" target="_blank" rel="noopener" onclick="trackClick('Apple Music - Assurance Story')"><img class="brand-icon" src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" aria-hidden="true">Apple Music</a>
+          <a href="https://music.youtube.com/playlist?list=OLAK5uy_lKNM0L1h_mEEYJh4l-GaOInMf1tqHVj2Q" target="_blank" rel="noopener" onclick="trackClick('YouTube Music - Assurance Story')"><img class="brand-icon" src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" aria-hidden="true">YouTube Music</a>
+          <a href="https://music.amazon.com/albums/B0H7P9YXFG" target="_blank" rel="noopener" onclick="trackClick('Amazon Music - Assurance Story')"><img class="brand-icon" src="https://api.iconify.design/simple-icons/amazonmusic.svg?color=%2325d1da" alt="" aria-hidden="true">Amazon Music</a>
+          <a href="https://www.deezer.com/us/album/1021433691" target="_blank" rel="noopener" onclick="trackClick('Deezer - Assurance Story')"><img class="brand-icon" src="https://cdn.simpleicons.org/deezer/A238FF" alt="" aria-hidden="true">Deezer</a>
+          <a href="https://tidal.com/album/540125704" target="_blank" rel="noopener" onclick="trackClick('Tidal - Assurance Story')"><img class="brand-icon" src="https://cdn.simpleicons.org/tidal/FFFFFF" alt="" aria-hidden="true">Tidal</a>
+        </div>
+        <div class="listen-actions"><button class="btn btn-outline" type="button" data-share-assurance>Share Assurance</button></div>
+        <p class="share-status" data-share-status aria-live="polite"></p>
+        <section class="lyrics-block" id="lyrics" aria-labelledby="lyrics-title">
+          <div><div class="section-title">Words and Music</div><h2 id="lyrics-title">Lyrics</h2></div>
+          <p class="lyrics-copy">Official lyrics will be added here soon.</p>
         </section>
       </div>
     </section>

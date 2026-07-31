@@ -6,11 +6,11 @@ var siteReleaseData={
     cover:"assurance-cover.png",
     coverAlt:"Assurance single cover art by Daniel Edokpayi",
     description:"Assurance is the lead single from the upcoming Veil Of Hope album, carrying a message of faith, confidence, and trusting God's promise through every season.",
-    href:"/presave-assurance",
-    streamLabel:"Pre-save Now!!",
+    href:"/assurance#listen",
+    streamLabel:"Listen Now!!",
     catalogLabel:"View Full Music Catalog",
     tracks:[
-      {number:"01",title:"Assurance",href:"/assurance",style:"Single - Releases July 31, 2026"}
+      {number:"01",title:"Assurance",href:"/assurance",style:"Single - Out Now"}
     ]
   },
   catalog:{
@@ -42,10 +42,10 @@ var siteReleaseData={
         title:"Assurance",
         cover:"assurance-cover.png",
         coverAlt:"Assurance single cover art",
-        description:"Lead single from the upcoming Veil Of Hope album. Releasing July 31, 2026.",
-        href:"/presave-assurance",
-        label:"Single - Pre-save",
-        cta:"Pre-save Now!!"
+        description:"Lead single from the upcoming Veil Of Hope album. Out now.",
+        href:"/assurance#listen",
+        label:"Single - Out Now",
+        cta:"Listen Now!!"
       },
       {
         title:"Carry Me Dey Go",
@@ -96,19 +96,6 @@ var siteReleaseData={
 };
 
 (function(){
-  var assuranceReleased=Date.now()>=Date.UTC(2026,6,31,4,0,0);
-  var assurance=siteReleaseData.latestRelease;
-  var assuranceSingle=siteReleaseData.catalog.singles[0];
-
-  if(assuranceReleased){
-    assurance.releaseDate="Out Now";
-    assurance.streamLabel="Listen Now!!";
-    assurance.tracks[0].style="Single - Out Now";
-    assuranceSingle.description="Lead single from the upcoming Veil Of Hope album. Out now.";
-    assuranceSingle.label="Single - Out Now";
-    assuranceSingle.cta="Listen Now!!";
-  }
-
   function esc(value){
     return String(value||"").replace(/[&<>"']/g,function(char){
       return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char];
