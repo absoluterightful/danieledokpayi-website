@@ -6,7 +6,7 @@ var siteReleaseData={
     cover:"assurance-cover.png",
     coverAlt:"Assurance single cover art by Daniel Edokpayi",
     description:"Assurance is the lead single from the upcoming Veil Of Hope album, carrying a message of faith, confidence, and trusting God's promise through every season.",
-    href:"/assurance#listen",
+    href:"/assurance",
     streamLabel:"Listen Now!!",
     catalogLabel:"View Full Music Catalog",
     tracks:[
@@ -43,7 +43,7 @@ var siteReleaseData={
         cover:"assurance-cover.png",
         coverAlt:"Assurance single cover art",
         description:"Lead single from the upcoming Veil Of Hope album. Out now.",
-        href:"/assurance#listen",
+        href:"/assurance",
         label:"Single - Out Now",
         cta:"Listen Now!!"
       },

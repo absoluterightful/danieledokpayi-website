@@ -1,6 +1,6 @@
 (() => {
   const releaseTime = Date.UTC(2026, 6, 31, 4, 0, 0);
-  const assurancePage = '/assurance#listen';
+  const assurancePage = '/assurance';
   let announcementText;
   let announcementLink;
 

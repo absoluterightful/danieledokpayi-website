@@ -26,7 +26,7 @@
     }
     if (actions) {
       actions.innerHTML =
-        '<a class="btn btn-primary" href="/assurance#listen" onclick="trackClick(\'Listen to Assurance - Release Takeover\')">Listen Now!!</a>' +
+        '<a class="btn btn-primary" href="/assurance" onclick="trackClick(\'Listen to Assurance - Release Takeover\')">Listen Now!!</a>' +
         '<a class="btn btn-outline" href="/assurance#meaning" onclick="trackClick(\'Assurance Story - Release Takeover\')">Read the Story</a>' +
         '<a class="btn btn-outline" href="/music" onclick="trackClick(\'Music Catalog - Release Takeover\')">Music Catalog</a>';
     }
