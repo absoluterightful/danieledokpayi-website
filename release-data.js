@@ -5,12 +5,13 @@ var siteReleaseData={
     releaseDate:"July 31, 2026",
     cover:"assurance-cover.png",
     coverAlt:"Assurance single cover art by Daniel Edokpayi",
-    description:"Assurance is the lead single from the upcoming Veil Of Hope album, carrying a message of faith, confidence, and trusting God's promise through every season.",
+    description:"Assurance and Carry Me Dey Go are the two tracks released from the upcoming Veil Of Hope album. Assurance carries a message of faith, confidence, and trusting God's promise through every season.",
     href:"/assurance",
     streamLabel:"Listen Now!!",
     catalogLabel:"View Full Music Catalog",
     tracks:[
-      {number:"01",title:"Assurance",href:"/assurance",style:"Single - Out Now"}
+      {number:"01",title:"Assurance",href:"/assurance",style:"Veil Of Hope - Out Now"},
+      {number:"02",title:"Carry Me Dey Go",href:"/carry-me-dey-go",style:"Veil Of Hope - Out Now"}
     ]
   },
   catalog:{
@@ -20,7 +21,7 @@ var siteReleaseData={
         cover:"veil-of-hope-cover.png",
         altCover:"veil-of-hope-alt-cover.png",
         coverAlt:"Veil Of Hope album cover",
-        description:"Debut album in progress. Assurance leads the way toward Veil Of Hope in Early 2027.",
+        description:"Debut album in progress. Assurance and Carry Me Dey Go are the two tracks released from Veil Of Hope ahead of the album's Early 2027 arrival.",
         href:"/coming-soon",
         label:"Album Preview",
         cta:"Preview Album"
@@ -42,7 +43,7 @@ var siteReleaseData={
         title:"Assurance",
         cover:"assurance-cover.png",
         coverAlt:"Assurance single cover art",
-        description:"Lead single from the upcoming Veil Of Hope album. Out now.",
+        description:"One of two tracks released from the upcoming Veil Of Hope album. Out now.",
         href:"/assurance",
         label:"Single - Out Now",
         cta:"Listen Now!!"
@@ -51,7 +52,7 @@ var siteReleaseData={
         title:"Carry Me Dey Go",
         cover:"carry-me-dey-go.jpg",
         coverAlt:"Carry Me Dey Go cover art",
-        description:"An uplifting Afrogospel song about trusting God's guidance through every season.",
+        description:"One of two tracks released from the upcoming Veil Of Hope album, centered on trusting God's guidance through every season.",
         href:"/carry-me-dey-go",
         label:"Single",
         cta:"Listen Now"
@@ -71,7 +72,7 @@ var siteReleaseData={
     {
       date:"Apr 20, 2024",
       title:"Carry Me Dey Go",
-      description:"Daniel's first single, later followed by acapella and instrumental versions in 2025.",
+      description:"Daniel's first single and one of two tracks released from the upcoming Veil Of Hope album, later followed by acapella and instrumental versions in 2025.",
       type:"Single"
     },
     {
@@ -89,7 +90,7 @@ var siteReleaseData={
     {
       date:"Jul 31, 2026",
       title:"Assurance",
-      description:"Lead single from the upcoming Veil Of Hope album.",
+      description:"One of two tracks released from the upcoming Veil Of Hope album, alongside Carry Me Dey Go.",
       type:"Single"
     }
   ]
@@ -113,7 +114,8 @@ var siteReleaseData={
     if(!release){return;}
 
     var tracklist=(release.tracks||[]).map(function(track){
-      return '<li><a href="'+esc(track.href)+'" onclick="trackClick(\''+clickLabel(track.title)+' - Tracklist\')"><div><span>'+esc(track.number)+'</span>'+esc(track.title)+'</div><small data-assurance-release-label>'+esc(track.style)+'</small></a></li>';
+      var labelAttrs=track.title==="Assurance"?' data-assurance-release-label data-released-label="'+esc(track.style)+'"':"";
+      return '<li><a href="'+esc(track.href)+'" onclick="trackClick(\''+clickLabel(track.title)+' - Tracklist\')"><div><span>'+esc(track.number)+'</span>'+esc(track.title)+'</div><small'+labelAttrs+'>'+esc(track.style)+'</small></a></li>';
     }).join("");
 
     if(homeGrid){

@@ -22,7 +22,7 @@
     if (title) title.textContent = 'Assurance';
     if (copy) {
       copy.textContent =
-        'An Afrobeat song about faith, steady peace, and knowing that God is with you when life gets noisy.';
+        'One of two tracks released from Veil Of Hope, Assurance is an Afrobeat song about faith, steady peace, and knowing that God is with you when life gets noisy.';
     }
     if (actions) {
       actions.innerHTML =

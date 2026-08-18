@@ -5,11 +5,6 @@
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16511764603');function trackClick(label){if(typeof gtag==='function'){gtag('event','music_link_click',{event_category:'Still Here Streaming Page',event_label:label});}}function toggleMenu(){document.body.classList.toggle('menu-open');}
   </script>
-  <script>
-    function chicagoDateKey(){var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());var date={};parts.forEach(function(part){date[part.type]=part.value;});return date.year+'-'+date.month+'-'+date.day;}
-    function updatePhysicalEditionState(){var isLive=chicagoDateKey()>='2026-08-12';document.querySelectorAll('[data-physical-status]').forEach(function(status){status.textContent=isLive?'Available now.':'Pre-order available now. Launches August 12.';});document.querySelectorAll('[data-physical-action]').forEach(function(action){var format=action.getAttribute('data-format');action.textContent=isLive?'Buy '+format:'Pre-order '+format;});}
-    document.addEventListener('DOMContentLoaded',function(){updatePhysicalEditionState();window.setInterval(updatePhysicalEditionState,30000);});
-  </script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -35,9 +30,6 @@
   <style>
     :root{--dark:#100805;--brown:#21120c;--soft:#321b11;--burnt:#d96c3b;--deep:#9e3f1d;--gold:#e5aa67;--cream:#f7e6cf;--muted:#c8aa90;--line:rgba(247,230,207,.14)}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 70% 15%,rgba(217,108,59,.22),transparent 35%),linear-gradient(180deg,var(--brown),var(--dark));color:var(--cream);min-height:100vh}a{color:inherit}.nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 7vw;background:rgba(16,8,5,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.logo{display:inline-flex;align-items:center;text-decoration:none;line-height:0;flex:0 0 auto}.logo-img{display:block;height:46px;width:auto;max-width:240px;object-fit:contain}.nav-links{display:flex;gap:22px;font-size:13px;text-transform:uppercase;letter-spacing:.12em}.nav-links a{text-decoration:none;opacity:.82}.nav-links a:hover,.nav-links a.active{color:var(--gold);opacity:1}.menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--cream);border-radius:12px;padding:8px 11px;font-size:22px;line-height:1;cursor:pointer}.wrap{max-width:1100px;margin:0 auto;padding:135px 24px 90px;display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.cover{width:100%;border-radius:30px;border:1px solid var(--line);box-shadow:0 30px 90px rgba(0,0,0,.5);display:block}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-weight:900;font-size:13px}h1{font-size:clamp(48px,8vw,92px);line-height:.95;letter-spacing:-.06em;margin:16px 0 18px}.muted{color:var(--muted);font-size:18px}.links{display:grid;gap:14px;margin-top:34px}.stream{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;border-radius:20px;background:rgba(255,255,255,.045);border:1px solid var(--line);text-decoration:none;font-weight:900;transition:.2s ease}.stream:hover{transform:translateY(-2px);border-color:rgba(229,170,103,.75);background:rgba(217,108,59,.12)}.stream-label{display:flex;align-items:center;gap:12px;min-width:0}.brand-icon{width:30px;height:30px;flex:0 0 30px;border-radius:999px;padding:6px;background:rgba(255,255,255,.06);border:1px solid var(--line);object-fit:contain}.arrow{color:var(--gold);margin-left:auto}.back{display:inline-flex;margin-top:24px;color:var(--muted);text-decoration:none}.back:hover{color:var(--gold)}footer{text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:850px){.nav{padding:15px 20px}.logo-img{height:32px;max-width:178px}.menu-toggle{display:block}.nav-links{position:absolute;top:100%;right:20px;left:20px;display:none;flex-direction:column;gap:0;padding:14px;background:rgba(16,8,5,.96);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.45)}.menu-open .nav-links{display:flex}.nav-links a{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0}.wrap{grid-template-columns:1fr;padding-top:115px}.stream{padding:16px 18px}}
   </style>
-  <style>
-    .physical-formats{max-width:1100px;margin:0 auto;padding:0 24px 88px}.format-heading{max-width:580px;margin-bottom:26px}.format-heading h2{margin:8px 0 0;font-size:clamp(32px,4vw,52px);line-height:1.02}.format-heading p{margin:12px 0 0;color:var(--muted);font-size:18px}.format-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.format-card{display:flex;flex-direction:column;padding:20px;border:1px solid rgba(229,170,103,.3);border-radius:8px;background:rgba(255,255,255,.045)}.format-art{display:block;width:100%;max-width:390px;margin:0 auto 20px;filter:drop-shadow(0 20px 22px rgba(0,0,0,.38))}.format-card h3{margin:0;font-size:23px}.format-card p{margin:6px 0 18px;color:var(--muted)}.release-state{color:var(--gold)!important;font-size:14px;font-weight:900}.format-action{display:inline-flex;justify-content:center;align-items:center;min-height:46px;padding:12px 16px;border-radius:8px;font-weight:900;text-decoration:none}.format-action.buy{background:var(--burnt);color:#fff}.format-action.buy:hover{background:#eb804d}.format-action.status{border:1px solid var(--line);color:var(--muted)}@media(max-width:650px){.physical-formats{padding:0 22px 70px}.format-grid{grid-template-columns:1fr}.format-art{max-width:300px}}
-  </style>
 </head>
 <body>
   <nav class="nav"><a class="logo" href="/" aria-label="Daniel Edokpayi home"><img class="logo-img" src="daniel-name-logo-nav.png" alt="Daniel Edokpayi"></a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button><div class="nav-links"><a href="/">Home</a><a href="/music">Music</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/exclusive">Exclusive</a><a href="/coming-soon">Coming Soon</a></div></nav>
@@ -45,29 +37,6 @@
     <div><img class="cover" src="still-here-cover.jpg" alt="Still Here EP cover art" /></div>
     <div><div class="eyebrow">Choose Your Platform</div><h1>Still Here EP</h1><p class="muted">Stream Daniel Edokpayi’s <em>Still Here</em> EP on your favorite music platform.</p><div class="links"><a class="stream" href="https://open.spotify.com/album/1lFIDyUpIgaJf4vb6e3lrY" target="_blank" rel="noopener" onclick="trackClick('Spotify')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/spotify/1DB954" alt="" aria-hidden="true">Spotify</span><span class="arrow">↗</span></a><a class="stream" href="https://music.apple.com/us/album/still-here-ep/6768001966" target="_blank" rel="noopener" onclick="trackClick('Apple Music')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" aria-hidden="true">Apple Music</span><span class="arrow">↗</span></a><a class="stream" href="https://music.youtube.com/playlist?list=OLAK5uy_njy2v01p6q2pXnlxrWZM-qfjUaMDIpfMA" target="_blank" rel="noopener" onclick="trackClick('YouTube Music')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" aria-hidden="true">YouTube Music</span><span class="arrow">↗</span></a><a class="stream" href="https://music.amazon.com/albums/B0H164FHJZ" target="_blank" rel="noopener" onclick="trackClick('Amazon Music')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/amazonmusic/25D1DA" alt="" aria-hidden="true">Amazon Music</span><span class="arrow">↗</span></a><a class="stream" href="https://www.deezer.com/us/album/979393211" target="_blank" rel="noopener" onclick="trackClick('Deezer')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/deezer/A238FF" alt="" aria-hidden="true">Deezer</span><span class="arrow">↗</span></a><a class="stream" href="https://tidal.com/album/523079677" target="_blank" rel="noopener" onclick="trackClick('Tidal')"><span class="stream-label"><img class="brand-icon" src="https://cdn.simpleicons.org/tidal/FFFFFF" alt="" aria-hidden="true">Tidal</span><span class="arrow">↗</span></a></div><a class="back" href="/">← Back to official website</a></div>
   </main>
-  <section class="physical-formats" aria-labelledby="physical-formats-title">
-    <div class="format-heading">
-      <div class="eyebrow">Physical Editions</div>
-      <h2 id="physical-formats-title">Still Here, in your hands.</h2>
-      <p>Limited physical editions of the Still Here EP.</p>
-    </div>
-    <div class="format-grid">
-      <article class="format-card">
-        <img class="format-art" src="still-here-vinyl.png" alt="Still Here EP vinyl record and sleeve">
-        <h3>12&quot; Vinyl</h3>
-        <p>Limited edition. US$26.40.</p>
-        <p class="release-state" data-physical-status>Pre-order available now. Launches August 12.</p>
-        <a class="format-action buy" data-physical-action data-format="vinyl" href="https://elasticstage.com/danieledokpayi/releases/still-here-singleep" target="_blank" rel="noopener" onclick="trackClick('Still Here Vinyl - ElasticStage')">Pre-order vinyl</a>
-      </article>
-      <article class="format-card">
-        <img class="format-art" src="still-here-cd.png" alt="Still Here EP CD and sleeve">
-        <h3>CD Edition</h3>
-        <p>A compact disc edition of Still Here.</p>
-        <p class="release-state" data-physical-status>Pre-order available now. Launches August 12.</p>
-        <a class="format-action buy" data-physical-action data-format="CD" href="https://elasticstage.com/danieledokpayi/releases/still-here-singleep" target="_blank" rel="noopener" onclick="trackClick('Still Here CD - ElasticStage')">Pre-order CD</a>
-      </article>
-    </div>
-  </section>
   <footer>© 2026 Daniel Edokpayi. All rights reserved.</footer>
 </body>
 </html>
