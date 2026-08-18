@@ -55,6 +55,14 @@
       panels.forEach(setupCarousel); tabs.forEach(function(tab){tab.addEventListener('click',function(){showFolder(tab.getAttribute('data-folder-tab'));});}); showFolder('eps');
     })();
   </script>
+  <script>
+    (function(){
+      function setCopy(card,title,label,description){if(!card){return;}var heading=card.querySelector('h3');var folderLabel=card.querySelector('.folder-label');var copy=card.querySelector('.muted');if(heading){heading.textContent=title;}if(folderLabel&&label){folderLabel.textContent=label;}if(copy){copy.textContent=description;}}
+      var cards=Array.prototype.slice.call(document.querySelectorAll('.catalog .card'));
+      cards.forEach(function(card){var heading=card.querySelector('h3');var title=heading&&heading.textContent.trim();if(title==='Veil Of Hope'){setCopy(card,'Veil Of Hope','Album Preview','Debut album in progress. Assurance and Carry Me Dey Go are separate released singles that will appear on Veil Of Hope in Early 2027.');}if(title==='Assurance'){setCopy(card,'Assurance','Lead Single | Out Now','The lead single from the upcoming Veil Of Hope album. Out now.');}if(title==='Carry Me Dey Go'){setCopy(card,'Carry Me Dey Go','Single','An earlier released single that will appear on Veil Of Hope, centered on trusting God\'s guidance through every season.');}});
+      Array.prototype.slice.call(document.querySelectorAll('.timeline-item')).forEach(function(item){var heading=item.querySelector('h3');if(heading&&heading.textContent.trim()==='Carry Me Dey Go'){var copy=item.querySelector('.muted');if(copy){copy.textContent='Daniel\'s first single, later followed by acapella and instrumental versions in 2025. It will appear on Veil Of Hope.';}}});
+    })();
+  </script>
   <footer>&copy; 2026 Daniel Edokpayi. All rights reserved.</footer>
 </body>
 </html>
