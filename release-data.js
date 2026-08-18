@@ -20,9 +20,9 @@ var siteReleaseData={
         cover:"veil-of-hope-cover.png",
         altCover:"veil-of-hope-alt-cover.png",
         coverAlt:"Veil Of Hope album cover",
-        description:"Debut album in progress. Assurance leads the way toward Veil Of Hope in Early 2027.",
+        description:"Daniel's debut album in progress. Current Veil Of Hope singles: Assurance and Carry Me Dey Go.",
         href:"/coming-soon",
-        label:"Album Preview",
+        label:"Upcoming Album - 2 Singles Out Now",
         cta:"Preview Album"
       }
     ],
@@ -44,16 +44,16 @@ var siteReleaseData={
         coverAlt:"Assurance single cover art",
         description:"Lead single from the upcoming Veil Of Hope album. Out now.",
         href:"/assurance",
-        label:"Single - Out Now",
+        label:"Veil Of Hope - Single - Out Now",
         cta:"Listen Now!!"
       },
       {
         title:"Carry Me Dey Go",
         cover:"carry-me-dey-go.jpg",
         coverAlt:"Carry Me Dey Go cover art",
-        description:"An uplifting Afrogospel song about trusting God's guidance through every season.",
+        description:"A Veil Of Hope album single about trusting God's guidance through every season.",
         href:"/carry-me-dey-go",
-        label:"Single",
+        label:"Veil Of Hope - Single",
         cta:"Listen Now"
       },
       {
@@ -71,8 +71,8 @@ var siteReleaseData={
     {
       date:"Apr 20, 2024",
       title:"Carry Me Dey Go",
-      description:"Daniel's first single, later followed by acapella and instrumental versions in 2025.",
-      type:"Single"
+      description:"Daniel's first single, later followed by acapella and instrumental versions in 2025. It is part of the upcoming Veil Of Hope album.",
+      type:"Veil Of Hope Single"
     },
     {
       date:"Nov 30, 2024",
@@ -90,7 +90,7 @@ var siteReleaseData={
       date:"Jul 31, 2026",
       title:"Assurance",
       description:"Lead single from the upcoming Veil Of Hope album.",
-      type:"Single"
+      type:"Veil Of Hope Single"
     }
   ]
 };
@@ -128,7 +128,7 @@ var siteReleaseData={
   function releaseCard(item){
     var target=item.external?' target="_blank" rel="noopener"':'';
     var assuranceAction=item.title==="Assurance"?" data-assurance-action":"";
-    var assuranceLabel=item.title==="Assurance"?' data-assurance-release-label data-released-label="Single - Out Now"':"";
+    var assuranceLabel=item.title==="Assurance"?' data-assurance-release-label data-released-label="Veil Of Hope - Single - Out Now"':"";
     var action=item.locked?'<span class="btn btn-locked" aria-disabled="true">'+esc(item.cta||"Locked")+'</span>':'<a class="btn btn-primary" href="'+esc(item.href)+'"'+target+assuranceAction+' onclick="trackClick(\''+clickLabel(item.title)+' - Folder\')">'+esc(item.cta||"Listen Now")+'</a>';
     var cover=item.altCover?'<a class="catalog-cover-stack" href="'+esc(item.href)+'" onclick="trackClick(\''+clickLabel(item.title)+' Covers - Folder\')" aria-label="Open '+esc(item.title)+' cover gallery"><span class="catalog-cover-peek" aria-hidden="true"><img src="'+esc(item.altCover)+'" alt=""></span><span class="catalog-cover-main"><img src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'"><span class="catalog-cover-count">2 Covers</span></span></a>':'<img class="cover" src="'+esc(item.cover)+'" alt="'+esc(item.coverAlt)+'" />';
     return '<article class="music-slide"><div class="card">'+cover+'<div class="folder-label"'+assuranceLabel+' style="margin-top:22px;">'+esc(item.label)+'</div><h3>'+esc(item.title)+'</h3><p class="muted">'+esc(item.description)+'</p><div class="buttons">'+action+'</div></div></article>';
@@ -206,14 +206,14 @@ var siteReleaseData={
     }
     panels.forEach(setupCarousel);
     tabs.forEach(function(tab){tab.addEventListener("click",function(){showFolder(tab.getAttribute("data-folder-tab"));});});
-    showFolder("eps");
+    showFolder("albums");
   }
 
   function renderCatalog(){
     var catalog=document.querySelector(".catalog");
     if(!catalog || !siteReleaseData.catalog){return;}
     var data=siteReleaseData.catalog;
-    catalog.innerHTML='<div class="catalog-head"><div class="section-title">Music Catalog</div><h2>Browse By Folder</h2><p class="muted" style="max-width:720px;margin:0 auto;">Albums, EPs, and singles stay organized as the catalog grows.</p><div class="catalog-tabs" role="tablist" aria-label="Music folders"><button class="catalog-tab" type="button" data-folder-tab="albums" role="tab">Albums</button><button class="catalog-tab active" type="button" data-folder-tab="eps" role="tab">EPs</button><button class="catalog-tab" type="button" data-folder-tab="singles" role="tab">Singles</button></div></div>'+catalogPanel("albums","Albums",data.albums||[],false)+catalogPanel("eps","EPs",data.eps||[],true)+catalogPanel("singles","Singles",data.singles||[],false);
+    catalog.innerHTML='<div class="catalog-head"><div class="section-title">Music Catalog</div><h2>Browse By Folder</h2><p class="muted" style="max-width:720px;margin:0 auto;">Albums, EPs, and singles stay organized as the catalog grows.</p><div class="catalog-tabs" role="tablist" aria-label="Music folders"><button class="catalog-tab active" type="button" data-folder-tab="albums" role="tab">Albums</button><button class="catalog-tab" type="button" data-folder-tab="eps" role="tab">EPs</button><button class="catalog-tab" type="button" data-folder-tab="singles" role="tab">Singles</button></div></div>'+catalogPanel("albums","Albums",data.albums||[],true)+catalogPanel("eps","EPs",data.eps||[],false)+catalogPanel("singles","Singles",data.singles||[],false);
     setupTabs(catalog);
   }
 
