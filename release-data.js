@@ -37,7 +37,6 @@ var siteReleaseData={
         coverAlt:"Still Here (Expanded) EP cover art",
         description:"The five-song expanded edition adds Your Voice to the original Still Here EP.",
         href:"/still-here-expanded",
-        external:true,
         label:"EP",
         cta:"Stream Expanded EP"
       },
@@ -53,15 +52,6 @@ var siteReleaseData={
     ],
     singles:[
       {
-        title:"Assurance",
-        cover:"assurance-cover.png",
-        coverAlt:"Assurance single cover art",
-        description:"Lead single from the upcoming Veil Of Hope album. Out now.",
-        href:"/assurance",
-        label:"Single",
-        cta:"Listen Now"
-      },
-      {
         title:"Carry Me Dey Go",
         cover:"carry-me-dey-go.jpg",
         coverAlt:"Carry Me Dey Go cover art",
@@ -76,6 +66,15 @@ var siteReleaseData={
         coverAlt:"Dance To The Beat cover art",
         description:"A joyful Afro-fusion celebration of faith, praise, and gratitude.",
         href:"/dance-to-the-beat",
+        label:"Single",
+        cta:"Listen Now"
+      },
+      {
+        title:"Assurance",
+        cover:"assurance-cover.png",
+        coverAlt:"Assurance single cover art",
+        description:"Lead single from the upcoming Veil Of Hope album. Out now.",
+        href:"/assurance",
         label:"Single",
         cta:"Listen Now"
       }
@@ -224,14 +223,14 @@ var siteReleaseData={
     }
     panels.forEach(setupCarousel);
     tabs.forEach(function(tab){tab.addEventListener("click",function(){showFolder(tab.getAttribute("data-folder-tab"));});});
-    showFolder("eps");
+    showFolder("albums");
   }
 
   function renderCatalog(){
     var catalog=document.querySelector(".catalog");
     if(!catalog || !siteReleaseData.catalog){return;}
     var data=siteReleaseData.catalog;
-    catalog.innerHTML='<div class="catalog-head"><div class="section-title">Music Catalog</div><h2>Browse By Folder</h2><p class="muted" style="max-width:720px;margin:0 auto;">Albums, EPs, and singles stay organized as the catalog grows.</p><div class="catalog-tabs" role="tablist" aria-label="Music folders"><button class="catalog-tab" type="button" data-folder-tab="albums" role="tab">Albums</button><button class="catalog-tab active" type="button" data-folder-tab="eps" role="tab">EPs</button><button class="catalog-tab" type="button" data-folder-tab="singles" role="tab">Singles</button></div></div>'+catalogPanel("albums","Albums",data.albums||[],false)+catalogPanel("eps","EPs",data.eps||[],true)+catalogPanel("singles","Singles",data.singles||[],false);
+    catalog.innerHTML='<div class="catalog-head"><div class="section-title">Music Catalog</div><h2>Browse By Folder</h2><p class="muted" style="max-width:720px;margin:0 auto;">Albums, EPs, and singles stay organized as the catalog grows.</p><div class="catalog-tabs" role="tablist" aria-label="Music folders"><button class="catalog-tab active" type="button" data-folder-tab="albums" role="tab">Albums</button><button class="catalog-tab" type="button" data-folder-tab="eps" role="tab">EPs</button><button class="catalog-tab" type="button" data-folder-tab="singles" role="tab">Singles</button></div></div>'+catalogPanel("albums","Albums",data.albums||[],true)+catalogPanel("eps","EPs",data.eps||[],false)+catalogPanel("singles","Singles",data.singles||[],false);
     setupTabs(catalog);
   }
 
