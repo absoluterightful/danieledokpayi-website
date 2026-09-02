@@ -6,7 +6,7 @@ var siteReleaseData={
     cover:"still-here-expanded.png",
     coverAlt:"Still Here (Expanded) EP cover art by Daniel Edokpayi",
     description:"The expanded edition of Still Here adds the new song Your Voice to Daniel's collection of faith-filled songs about God's presence through every season.",
-    href:"https://open.spotify.com/album/3Sn3VTSZ3gvCJ1QdTS0QVS",
+    href:"/still-here-expanded",
     streamLabel:"Listen Now",
     catalogLabel:"View Full Music Catalog",
     tracks:[
@@ -36,10 +36,10 @@ var siteReleaseData={
         cover:"still-here-expanded.png",
         coverAlt:"Still Here (Expanded) EP cover art",
         description:"The five-song expanded edition adds Your Voice to the original Still Here EP.",
-        href:"https://open.spotify.com/album/3Sn3VTSZ3gvCJ1QdTS0QVS",
+        href:"/still-here-expanded",
         external:true,
         label:"EP",
-        cta:"Listen on Spotify"
+        cta:"Stream Expanded EP"
       },
       {
         title:"Still Here",
